@@ -5,8 +5,6 @@ import {BrowserRouter as Router} from 'react-router-dom'
 import Sidebar from './Components/Sidebar/Sidebar'
 //import Routes component
 import Routes from './Components/ReactRoutes/Routes'
-//import Profile page
-import Profile from  './Components/Profile/Profile'
 //import CSS file for App
 import './App.css';
 
