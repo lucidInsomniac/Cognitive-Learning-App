@@ -112,7 +112,7 @@ function Categories({ categoriesData }) {
               : null
           }
         >
-          <div className="group-title">{grp.title}</div>
+          <div className="categories-group-title">{grp.title}</div>
           {/* here we iterate through items*/}
           {grp.items.map((item, itemI) => (
             <div
@@ -124,7 +124,7 @@ function Categories({ categoriesData }) {
                 dragging ? (e) => handleDragEnter(e, { grpI, itemI }) : null
               }
               key={item}
-              className={dragging ? getStyles({ grpI, itemI }) : "dnd-item"}
+              className={dragging ? getStyles({ grpI, itemI }) : "categories-dnd-item"}
             >
               {item === "1" && (
                 <img
@@ -163,9 +163,9 @@ function Categories({ categoriesData }) {
           ))}
         </div>
       ))}
-      <div className="buttons">
-        <button onClick={() => handleTryAgainClick()}>Try Again</button>
-        <button onClick={() => handleIsSolvedClick()}>Done</button>
+      <div className="categories-buttons">
+        <button id="categories" onClick={() => handleTryAgainClick()} className="lg-2 col background-warning">Try Again</button>
+        <button id="categories" onClick={() => handleIsSolvedClick()} className="lg-2 col background-warning">Done</button>
       </div>
     </div>
   );
