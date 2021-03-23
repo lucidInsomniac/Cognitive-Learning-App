@@ -1,22 +1,22 @@
 .ImagePuzzle1View {
   text-align: center;
-  width:100vw;
+  width: 100%;
   /* height: 100vh; */
   
 }
 
 /*This is the container for the columns, cards and img*/
-.drag-n-drop {
- justify-content: space-evenly;
+.img-puzzle-drag-n-drop {
+  justify-content: space-evenly;
   /* Shifts entire container left */
   margin-right: 0%;
   /* Shifts entire container right */
-  margin-left: -3%;
+  margin-left: -8%;
   padding: 0.5rem;
   padding-top: 2%;
   display: grid;
-  gap: 3.5rem;
-  width: 75%;
+  gap: 2.3rem;
+  width: 150%;
   height: 100%;
   grid-template-columns: repeat(3, 300px);
   /* Check where cointainer is located */
@@ -24,23 +24,21 @@
   
 }
 
-.dnd-group {
-  background-color: #757575;
+.img-puzzle-dnd-group {
+  background: #757575;
   border-radius: 5px;
   padding: 0.5rem;  
   margin-bottom: -10%;
-  
-  
- 
+  width: 100%;
+  height: auto;
 }
 
 
-.group-title {
+.img-puzzle-group-title {
   margin-bottom: 0.5rem;
-  
 }
 
-.dnd-item {
+.img-puzzle-dnd-item {
   display: grid;
   align-items: center;
   min-height: 150px;
@@ -50,33 +48,37 @@
   font-weight: bold;
 }
 
-.dnd-item:not(:last-of-type) {
+.img-puzzle-dnd-item:not(:last-of-type) {
   margin-bottom: 0.5rem;
 }
 
-.dnd-item * {
+.img-puzzle-dnd-item * {
   margin: 0;
 }
 
 p {
   align-self: center;
+  
 }
 
-
-.puzzle-piece {
+.img-puzzle-piece {
   display: grid;
   gap: 0.5rem;
   width: 100%;
   height: 100%;
   grid-template-columns: repeat(auto-fill, 300px);
   border-radius: 5px;
+  
 }
 
-
+img.img-puzzle-piece {
+  object-fit: cover;
+}
 
 /*container for img*/
 img.cactus-img {
   display: flex;
+  
 }
 
 /*image was not rendering because it was not 
@@ -109,16 +111,18 @@ div.cactus-img {
 
 /*This is the container for buttons
 need to call it by the parent tag then classname*/
-div.buttons {
+div.puzzle-buttons {
   display: flex;
   flex-direction:column;
-  justify-self:flex-start;
+  /* justify-self:flex-start; */
+  position: relative;
   width: 50%;
   gap: 2px;
   /* This checks where location of container is located */
   /* background: grey;  */
   margin-left: 450%;
   margin-right: 0%;
+  margin-top: -200%;
 
   
 }
@@ -129,7 +133,8 @@ button#puzzle-button {
   width: 100%;
   padding-left: 45%;
   padding-right: 65%;
-  padding-top: 12%;
-  padding-bottom: 12%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  margin-bottom: 100%;
 
 }
