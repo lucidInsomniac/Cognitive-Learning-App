@@ -87,19 +87,19 @@ function DragNDrop1({ data }) {
   };
 
   return (
-    <div className="drag-n-drop">
+    <div className="img-puzzle-drag-n-drop">
       {/* here we iterate through groups*/}
       {list.map((grp, grpI) => (
         <div
           key={grp.title}
-          className="dnd-group"
+          className="img-puzzle-dnd-group"
           onDragEnter={
             dragging && !grp.items.length
               ? (e) => handleDragEnter(e, { grpI, itemI: 0 })
               : null
           }
         >
-          <div className="group-title">{grp.title}</div>
+          <div className="img-puzzle-group-title">{grp.title}</div>
           {/* here we iterate through items*/}
           {grp.items.map((item, itemI) => (
             <div
@@ -111,41 +111,41 @@ function DragNDrop1({ data }) {
                 dragging ? (e) => handleDragEnter(e, { grpI, itemI }) : null
               }
               key={item}
-              className={dragging ? getStyles({ grpI, itemI }) : "dnd-item"}
+              className={dragging ? getStyles({ grpI, itemI }) : "img-puzzle-dnd-item"}
             >
               {item === "1" && (
                 <img
                   src={Piece1}
                   alt="piece 1 of a puzzle"
-                  className="puzzle-piece"
+                  className="img-puzzle-piece"
                 />
               )}
               {item === "2" && (
                 <img
                   src={Piece2}
                   alt="piece 2 of a puzzle"
-                  className="puzzle-piece"
+                  className="img-puzzle-piece"
                 />
               )}
               {item === "3" && (
                 <img
                   src={Piece3}
                   alt="piece 3 of a puzzle"
-                  className="puzzle-piece"
+                  className="img-puzzle-piece"
                 />
               )}
               {item === "4" && (
                 <img
                   src={Piece4}
                   alt="piece 4 of a puzzle"
-                  className="puzzle-piece"
+                  className="img-puzzle-piece"
                 />
               )}
               {item === "5" && (
                 <img
                   src={Piece5}
                   alt="piece 5 of a puzzle"
-                  className="puzzle-piece"
+                  className="img-puzzle-piece"
                 />
               )}
             </div>
@@ -155,7 +155,7 @@ function DragNDrop1({ data }) {
       <div className="cactus-img">
         <img src={Cactus} alt="cactus illustration" className="whole-cactus" />
       </div>
-      <div className="buttons">
+      <div className="puzzle-buttons">
         <button id="puzzle-button" onClick={() => handleTryAgainClick()} className="lg-2 col background-warning">Try Again</button>
         <button id="puzzle-button" onClick={() => handleIsSolvedClick()}className="lg-2 col background-warning">Done</button>
       </div>
