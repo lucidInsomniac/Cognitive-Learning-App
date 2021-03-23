@@ -5,7 +5,8 @@ import {BrowserRouter as Router} from 'react-router-dom'
 import Sidebar from './Components/Sidebar/Sidebar'
 //import Routes component
 import Routes from './Components/ReactRoutes/Routes'
-
+//import Profile page
+import Profile from  './Components/Profile/Profile'
 //import CSS file for App
 import './App.css';
 
@@ -18,8 +19,8 @@ function App() {
           {/* This is the Component for the Sidebar */}
           <Sidebar />
 
-          {/* This is the Component for our React Routes */}
-        <Routes />
+           {/* This is the Component for our React Routes */}
+           <Routes />
         </header>
       </div>
     </Router>
