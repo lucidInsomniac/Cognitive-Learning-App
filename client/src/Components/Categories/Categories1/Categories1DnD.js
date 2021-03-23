@@ -9,6 +9,22 @@ import Books from "../CatImg/books.jpg";
 import House from "../CatImg/house.jpg";
 import "./Categories1.css";
 
+const saveScore = (gameScore) => {
+  let options = {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(gameScore),
+  };
+  fetch("http://localhost:5000/server", options)
+    .then((response) => response.json())
+    .then((responseJson) => {
+      console.log("score saved");
+    })
+    .catch((err) => {
+      console.log("ERROR:", err.message);
+    });
+};
+
 function Categories({ categoriesData }) {
   const [list, setList] = useState(categoriesData);
   const [dragging, setDragging] = useState(false);
@@ -79,14 +95,18 @@ function Categories({ categoriesData }) {
     for (let i = 0; i < rigthPiecesOrder.length; i++) {
       if (rigthPiecesOrder.includes("6") && rigthPiecesOrder.includes("9")) {
         console.log("You did it!");
+        return true;
       } else {
         console.log("Oops! Try again!");
+        return false;
       }
     }
   };
 
   const handleIsSolvedClick = () => {
-    isSolved();
+    if (isSolved()) {
+      saveScore({});
+    }
   };
 
   const handleTryAgainClick = () => {
