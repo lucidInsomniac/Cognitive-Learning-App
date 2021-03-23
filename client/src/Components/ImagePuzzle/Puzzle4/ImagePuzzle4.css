@@ -1,0 +1,135 @@
+.ImagePuzzle1View {
+  text-align: center;
+  width:100vw;
+  /* height: 100vh; */
+  
+}
+
+/*This is the container for the columns, cards and img*/
+.drag-n-drop {
+ justify-content: space-evenly;
+  /* Shifts entire container left */
+  margin-right: 0%;
+  /* Shifts entire container right */
+  margin-left: -3%;
+  padding: 0.5rem;
+  padding-top: 2%;
+  display: grid;
+  gap: 3.5rem;
+  width: 75%;
+  height: 100%;
+  grid-template-columns: repeat(3, 300px);
+  /* Check where cointainer is located */
+  /* background: black; */
+  
+}
+
+.dnd-group {
+  background-color: #757575;
+  border-radius: 5px;
+  padding: 0.5rem;  
+  margin-bottom: -10%;
+  
+  
+ 
+}
+
+
+.group-title {
+  margin-bottom: 0.5rem;
+  
+}
+
+.dnd-item {
+  display: grid;
+  align-items: center;
+  min-height: 150px;
+  background-color: #efefef;
+  color: #282c34;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.dnd-item:not(:last-of-type) {
+  margin-bottom: 0.5rem;
+}
+
+.dnd-item * {
+  margin: 0;
+}
+
+p {
+  align-self: center;
+}
+
+
+.puzzle-piece {
+  display: grid;
+  gap: 0.5rem;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: repeat(auto-fill, 300px);
+  border-radius: 5px;
+}
+
+
+
+/*container for img*/
+img.cactus-img {
+  display: flex;
+}
+
+/*image was not rendering because it was not 
+being called, needs to be after:
+
+img.cactus-img {
+  display: flex;
+}
+
+in sequence to show up inside the box
+ */
+img 
+
+/*This is moves anything named "whole-cactus" in the classname for the img*/
+.whole-cactus {
+  width: 150px;
+  height: 250px;
+  padding: 150px;
+  /*used to check location on page*/
+  /* border: 5px solid thick black; */
+  /* background: grey; */
+ 
+}
+
+/*this moves the specific container for img*/
+div.cactus-img {
+  /* this moves the img into position within container */
+  align-self: center;
+}
+
+/*This is the container for buttons
+need to call it by the parent tag then classname*/
+div.buttons {
+  display: flex;
+  flex-direction:column;
+  justify-self:flex-start;
+  width: 50%;
+  gap: 2px;
+  /* This checks where location of container is located */
+  /* background: grey;  */
+  margin-left: 450%;
+  margin-right: 0%;
+
+  
+}
+
+button#puzzle-button {
+  align-self: flex-start;
+  text-align: center;
+  width: 100%;
+  padding-left: 45%;
+  padding-right: 65%;
+  padding-top: 12%;
+  padding-bottom: 12%;
+
+}

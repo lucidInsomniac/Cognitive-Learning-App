@@ -1,0 +1,105 @@
+.Categories {
+  text-align: center;
+  width: 100%;
+}
+
+.categories-drag-n-drop {
+  /*to check location of cointainer*/
+  /* background: black; */
+  justify-content:space-between;
+  padding: 0.5rem;
+  display: grid;
+  gap: 0.5rem;
+  width: 150%;
+  height: 870px;
+  grid-template-columns: repeat(2, 300px);
+  margin-right: 30%;
+  margin-top: 4%;
+
+}
+
+/*this moves the container for the cards*/
+.categories-dnd-group {
+  background-color: #757575;
+  border-radius: 5px;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.group-title {
+  
+  margin-bottom: 0.5rem;
+}
+
+.dnd-item {
+  
+  display: grid;
+  align-items: center;
+  min-height: 150px;
+  background-color: #efefef;
+  color: #282c34;
+  border-radius: 5px;
+  font-weight: bold;
+  justify-items: center;
+}
+
+.dnd-item:not(:last-of-type) {
+  margin-bottom: 0.5rem;
+}
+
+.dnd-item * {
+  margin: 0;
+}
+
+p {
+  align-self: center;
+}
+
+
+.category-card {
+  
+  display: grid;
+  gap: 0.5rem;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: repeat(auto-fill, 300px);
+  border-radius: 5px;
+}
+
+.category-card {
+  
+  width: 150px;
+  height: 150px;
+}
+
+/*This is a container for the buttons, not the actual buttons*/
+.buttons {
+  /*background color is used for checking location*/
+  /* background-color: #757575; */
+  justify-content:space-between;
+  display: flex;
+  flex-direction: column;
+  margin-right: 0%;
+  margin-left: 395%;
+  margin-top: -200%;
+  margin-bottom: 90%;
+  /* display: grid;
+  grid-template-columns: repeat(2, 1fr); */
+  width: 50%;
+  gap: 20px;
+  /* padding-left: 150px; */
+}
+
+/*These are the actual buttons*/
+button#button {
+  align-self: flex-start;
+  text-align: left;
+  width: 100%;
+  padding-left: 45%;
+  padding-right: 65%;
+  margin-left: -35%;
+  padding-top: 15%;
+  padding-bottom: 15%;
+ 
+  
+}

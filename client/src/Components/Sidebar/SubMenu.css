@@ -1,0 +1,35 @@
+
+.sidebar-link {
+     /*We treat each listed item as a row with flex display*/
+     display: flex;
+     /*x-axis runs vertical so we align items to center, where it
+     will be on the y-axis*/
+     align-items: center;
+     /*give height the same length as width and relation to font*/
+     /*This gives the icon and text link a square shape*/
+     height: 4.5rem;
+     /*use default fount color*/
+     color: var(--text-primary);
+     /*text inside the link shows only when user hovers*/
+     text-decoration: none;
+     filter: grayscale(100%) opacity(0.7);
+     transition: var(--transition-speed); 
+     margin-top: .7rem;
+     margin-bottom: .7rem;
+     
+}
+
+
+
+.sidebar-link:hover {
+  filter: grayscale(0%) opacity(1);
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+
+}
+
+.nav-icon {
+  width: 2rem;
+    min-width: 2rem;
+    margin: 0 1.5rem;
+}

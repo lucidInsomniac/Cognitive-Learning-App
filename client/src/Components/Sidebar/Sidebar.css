@@ -1,0 +1,63 @@
+
+/*reusable css for root*/
+:root {
+  font-size: 16px;
+  --text-primary: #b6b6b6;
+  --text-secondary: #ececec;
+  --bg-primary: #23232e;
+  --bg-secondary: #141418;
+  --transition-speed: 600ms;
+}
+
+
+.nav {
+  /* This checks to see where this is located */
+  /* border: 5px solid black; */
+    /*By default, flex will show as a row*/
+    display: flex;
+    /*To create a top down display, we use column
+    for flex direction*/
+    flex-direction: column;
+    /*items will center here*/
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    
+}
+
+/*This moves the entire sidebar*/
+.navbar {
+  /* border: 5px solid black; */
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  margin-left: -44%;
+  padding-top: 1%;
+  height: 100%;
+  width: 15rem;
+  background: #ccbfe4;
+  overflow: scroll;
+}
+
+/*This is a psuedo element on sidebar that we are targeting
+to get rid of any ugly default scrollbars*/
+.navbar::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+/*psuedo element to change sidebar tracking*/
+.navbar::-webkit-scrollbar-track {
+  background: #e2d4e7;
+}
+
+/*pseudo element for sidebar for thumb track on scroll bar*/
+.navbar::-webkit-slider-thumb {
+  background: #c8c4d4;
+}
+
+
+.hippo {
+  margin-left: 10%;
+  margin-bottom: 5%;
+}
