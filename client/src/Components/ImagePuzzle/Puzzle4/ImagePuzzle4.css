@@ -11,7 +11,6 @@
   /* Shifts entire container left */
   margin-right: 0%;
   /* Shifts entire container right */
-  
   padding: 0.5rem;
   padding-top: 2%;
   display: grid;
@@ -78,7 +77,6 @@ img.img-puzzle-piece {
 /*container for img*/
 img.cactus-img {
   display: flex;
-  
 }
 
 /*image was not rendering because it was not 
@@ -107,6 +105,8 @@ img
 div.cactus-img {
   /* this moves the img into position within container */
   align-self: center;
+  margin-top: 10%;
+  
 }
 
 /*This is the container for buttons
