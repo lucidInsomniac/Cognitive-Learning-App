@@ -8,7 +8,7 @@
      /*give height the same length as width and relation to font*/
      /*This gives the icon and text link a square shape*/
      height: 4.5rem;
-     /*use default fount color*/
+     /*use default font color*/
      color: var(--text-primary);
      /*text inside the link shows only when user hovers*/
      text-decoration: none;
