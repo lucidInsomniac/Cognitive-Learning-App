@@ -15,3 +15,5 @@ INT NOT NULL,
 puzzle_completed
 varchar(10)  
 );
+
+
