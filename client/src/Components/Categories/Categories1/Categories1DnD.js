@@ -15,7 +15,7 @@ const saveScore = (gameScore) => {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(gameScore),
   };
-  fetch("http://localhost:5000/server", options)
+  fetch("http://localhost:3000/server", options)
     .then((response) => response.json())
     .then((responseJson) => {
       console.log("score saved");
@@ -105,7 +105,12 @@ function Categories({ categoriesData }) {
 
   const handleIsSolvedClick = () => {
     if (isSolved()) {
-      saveScore({});
+      saveScore({
+        game_name: "Categories 2",
+        game_lvl: 4,
+        game_images: null,
+        completed: 1,
+      });
     }
   };
 
@@ -144,7 +149,9 @@ function Categories({ categoriesData }) {
                 dragging ? (e) => handleDragEnter(e, { grpI, itemI }) : null
               }
               key={item}
-              className={dragging ? getStyles({ grpI, itemI }) : "categories-dnd-item"}
+              className={
+                dragging ? getStyles({ grpI, itemI }) : "categories-dnd-item"
+              }
             >
               {item === "1" && (
                 <img
@@ -184,8 +191,20 @@ function Categories({ categoriesData }) {
         </div>
       ))}
       <div className="categories-buttons">
-        <button id="categories" onClick={() => handleTryAgainClick()} className="lg-2 col background-warning">Try Again</button>
-        <button id="categories" onClick={() => handleIsSolvedClick()} className="lg-2 col background-warning">Done</button>
+        <button
+          id="categories"
+          onClick={() => handleTryAgainClick()}
+          className="lg-2 col background-warning"
+        >
+          Try Again
+        </button>
+        <button
+          id="categories"
+          onClick={() => handleIsSolvedClick()}
+          className="lg-2 col background-warning"
+        >
+          Done
+        </button>
       </div>
     </div>
   );
