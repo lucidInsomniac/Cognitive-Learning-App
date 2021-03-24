@@ -1,4 +1,4 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
 const db = require("../model/helper");
 const bodyParser = require("body-parser");
@@ -17,22 +17,8 @@ router.get("/server", async (req, res) => {
   } catch (err) {
     res.status(500).send({ error: err.message });
   }
-}); 
-
-router.get("/server/:difficulty_level", async (req, res) => {
-  let difficulty_level = req.params.difficulty_level;
-  try {
-    let sql = `SELECT * FROM image_puzzle WHERE difficulty_level = ${difficulty_level}`;
-    let results = await db(sql);
-    if (results.data.length === 1) {
-      res.send(results.data[0]);
-    } else {
-      res.status(404).send({ error: "Not Found" });
-    }
-  } catch (err) {
-    res.status(500).send({ error: err.message });
-  }
 });
+
 
 //POST
 router.post("/server", async (req, res) => {
@@ -59,7 +45,7 @@ router.delete("/server/:image_id", async (req, res) => {
     let results = await db(sql);
     if (results.data.length === 1) {
       sql = `DELETE FROM image_puzzle WHERE image_id = ${image_id}`;
-      // Delete 
+      // Delete
       await db(sql);
       // Return *all*
       results = await db("SELECT * FROM image_puzzle");
@@ -67,7 +53,8 @@ router.delete("/server/:image_id", async (req, res) => {
     } else {
       res.status(404).send({ error: "Not Found" });
     }
-  } catch (err) {y
+  } catch (err) {
+    y;
     res.status(500).send({ error: err.message });
   }
 });

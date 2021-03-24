@@ -1,30 +1,44 @@
-.SituationsDnD {
-  text-align: center;
-  width: 100%;
+
+.Situations1DnD {
+  /* background-color: #282c34; */
+  min-height: 100vh;
+  display: flex;
+  /* flex-direction: column;
+      align-items: center;
+      justify-content: center; */
+  font-size: calc(10px + 2vmin);
+  color: white;
+   margin-left: -15%;
+  
 }
 
 .situations-drag-n-drop {
-    /* background: black; */
-padding: 0.5rem;
+  /*to see where location is*/
+   /* background: rgb(252, 14, 14); */
+  padding: 0.5rem;
   display: grid;
   gap: 0.5rem;
-  width: 100%;
-  height: 100%;
+  width: 60%;
+  height: 80%;
   grid-template-columns: repeat(2, 300px);
+ 
 }
 
 .situations-dnd-group {
   background-color: #757575;
   border-radius: 5px;
   padding: 0.5rem;
+  /*to see where location is*/
+  /* background: rgb(252, 14, 14); */
+
 }
 
-.group-title {
+.situations-group-title {
   
     margin-bottom: 0.5rem;
   }
   
-  .dnd-item {
+  .situations-dnd-item {
     
     display: grid;
     align-items: center;
@@ -34,13 +48,15 @@ padding: 0.5rem;
     border-radius: 5px;
     font-weight: bold;
     justify-items: center;
+    /*to see where location is*/
+    /* background: rgb(252, 14, 14);  */
   }
   
-  .dnd-item:not(:last-of-type) {
+  .situations-dnd-item:not(:last-of-type) {
     margin-bottom: 0.5rem;
   }
   
-  .dnd-item * {
+  .situations-dnd-item * {
     margin: 0;
   }
   
@@ -53,8 +69,8 @@ padding: 0.5rem;
     
     display: grid;
     gap: 0.5rem;
-    width: 100%;
-    height: 100%;
+    /* width: 100%;
+    height: 100%; */
     grid-template-columns: repeat(auto-fill, 300px);
     border-radius: 5px;
   }
@@ -64,18 +80,42 @@ padding: 0.5rem;
     width: 150px;
     height: 150px;
   }
+
+  img.group-one.category-card {
+    display: grid;
+    gap: 0.5rem;
+    /* width: 100%;
+    height: 100%; */
+    grid-template-columns: repeat(auto-fill, 300px);
+    border-radius: 5px;
+    justify-self: end;
+    width: 142px;
+    height: 284px;
+  }
+  
+  img.group-two.category-card {
+    display: grid;
+    gap: 0.5rem;
+    /* width: 100%;
+    height: 100%; */
+    grid-template-columns: repeat(auto-fill, 300px);
+    border-radius: 5px;
+    justify-self: start;
+    width: 142px;
+    height: 284px;
+  }
   
   /*This is a container for the buttons, not the actual buttons*/
-  .buttons {
+  .pizza-buttons {
     /*background color is used for checking location*/
     /* background-color: #757575; */
     justify-content:space-between;
     display: flex;
     flex-direction: column;
     margin-right: 0%;
-    margin-left: 395%;
-    margin-top: -200%;
-    margin-bottom: 90%;
+    margin-left: 315%;
+    margin-top: -280%;
+    margin-bottom: 140%;
     /* display: grid;
     grid-template-columns: repeat(2, 1fr); */
     width: 50%;
@@ -84,7 +124,7 @@ padding: 0.5rem;
   }
   
   /*These are the actual buttons*/
-  button#button {
+  button#pizza {
     align-self: flex-start;
     text-align: left;
     width: 100%;

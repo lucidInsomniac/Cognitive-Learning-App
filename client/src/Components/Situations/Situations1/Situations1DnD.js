@@ -111,7 +111,7 @@ export default function Situations1DnD ({ situationsData }) {
 
 
     return (
-        <div className="SituationsDnD">
+        <div className="Situations1DnD">
             <div className="situations-drag-n-drop">
                 {/* here we iterate through groups*/}
                 {list.map((grp, grpI) => (
@@ -124,7 +124,7 @@ export default function Situations1DnD ({ situationsData }) {
                         : null
                     }
                     >
-                    <div className="group-title">{grp.title}</div>
+                    <div className="situations-group-title">{grp.title}</div>
                     {/* here we iterate through items*/}
                     {grp.items.map((item, itemI) => (
                         <div
@@ -136,7 +136,7 @@ export default function Situations1DnD ({ situationsData }) {
                                 dragging ? (e) => handleDragEnter(e, { grpI, itemI }) : null
                             }
                             key={item}
-                            className={dragging ? getStyles({ grpI, itemI }) : "dnd-item"}
+                            className={dragging ? getStyles({ grpI, itemI }) : "situations-dnd-item"}
                         >
                                 {item === "1a" && (
                                     <img
@@ -198,9 +198,9 @@ export default function Situations1DnD ({ situationsData }) {
                     ))}
                     </div>
                 ))}
-                <div className="buttons" id="pizza">
-                    <button id="pizza" onClick={() => handleTryAgainClick()}>Try Again</button>
-                    <button id="pizza" onClick={() => handleIsSolvedClick()}>Done</button>
+                <div className="pizza-buttons">
+                    <button id="pizza" onClick={() => handleTryAgainClick()} className="lg-2 col background-warning">Try Again</button>
+                    <button id="pizza" onClick={() => handleIsSolvedClick()} className="lg-2 col background-warning">Done</button>
                 </div>
             </div>
             

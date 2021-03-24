@@ -9,6 +9,22 @@ import Books from "../CatImg/books.jpg";
 import House from "../CatImg/house.jpg";
 import "./Categories1.css";
 
+const saveScore = (gameScore) => {
+  let options = {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(gameScore),
+  };
+  fetch("http://localhost:5000/server", options)
+    .then((response) => response.json())
+    .then((responseJson) => {
+      console.log("score saved");
+    })
+    .catch((err) => {
+      console.log("ERROR:", err.message);
+    });
+};
+
 function Categories({ categoriesData }) {
   const [list, setList] = useState(categoriesData);
   const [dragging, setDragging] = useState(false);
@@ -79,14 +95,18 @@ function Categories({ categoriesData }) {
     for (let i = 0; i < rigthPiecesOrder.length; i++) {
       if (rigthPiecesOrder.includes("6") && rigthPiecesOrder.includes("9")) {
         console.log("You did it!");
+        return true;
       } else {
         console.log("Oops! Try again!");
+        return false;
       }
     }
   };
 
   const handleIsSolvedClick = () => {
-    isSolved();
+    if (isSolved()) {
+      saveScore({});
+    }
   };
 
   const handleTryAgainClick = () => {
@@ -112,7 +132,7 @@ function Categories({ categoriesData }) {
               : null
           }
         >
-          <div className="group-title">{grp.title}</div>
+          <div className="categories-group-title">{grp.title}</div>
           {/* here we iterate through items*/}
           {grp.items.map((item, itemI) => (
             <div
@@ -124,7 +144,7 @@ function Categories({ categoriesData }) {
                 dragging ? (e) => handleDragEnter(e, { grpI, itemI }) : null
               }
               key={item}
-              className={dragging ? getStyles({ grpI, itemI }) : "dnd-item"}
+              className={dragging ? getStyles({ grpI, itemI }) : "categories-dnd-item"}
             >
               {item === "1" && (
                 <img
@@ -163,9 +183,9 @@ function Categories({ categoriesData }) {
           ))}
         </div>
       ))}
-      <div className="buttons">
-        <button onClick={() => handleTryAgainClick()}>Try Again</button>
-        <button onClick={() => handleIsSolvedClick()}>Done</button>
+      <div className="categories-buttons">
+        <button id="categories" onClick={() => handleTryAgainClick()} className="lg-2 col background-warning">Try Again</button>
+        <button id="categories" onClick={() => handleIsSolvedClick()} className="lg-2 col background-warning">Done</button>
       </div>
     </div>
   );
