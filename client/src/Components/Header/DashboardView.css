@@ -1,0 +1,38 @@
+/* This is used to check for container space
+.icon-container{
+  background: black;
+  
+} */
+
+.avatar {
+margin-right:-90%;
+margin-top: 2%;
+background:rgb(230, 231, 156);
+border-radius: 35%;
+color:rgb(207, 137, 111);
+box-shadow: 2px 2px 2px darkblue;
+}
+
+img {
+  width: 50%;
+  height: 25%;
+  margin-left: 32.5%;
+  margin-bottom: -45%;
+  margin-top: 4%;
+  box-shadow: 2px 2px 2px darkblue;
+}
+
+h1 {
+    display:flex;
+    align-content:space-between;
+    text-align: center;
+    margin-left: 40%;
+    margin-top: -3%;
+    text-shadow: 4px 4px 4px lightslategray;
+}
+
+.welcome {
+    margin-right: 2%;
+    margin-left: 2%;
+    
+}
