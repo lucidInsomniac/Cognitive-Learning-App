@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS player;
 DROP TABLE IF EXISTS games;
 CREATE TABLE games ( 
 game_id
@@ -14,7 +15,7 @@ game_score
 INT  
 );
 
-DROP TABLE IF EXISTS player;
+
 CREATE TABLE player ( 
 player_id
 INT NOT NULL AUTO_INCREMENT,
