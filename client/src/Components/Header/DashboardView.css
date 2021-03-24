@@ -1,12 +1,15 @@
-/* This is used to check for container space
-.icon-container{
+/* This is used to check for container space */
+/* .icon-container{
   background: black;
   
 } */
+.DashboardView {
+  margin-bottom: 40%;
+}
 
 .avatar {
 margin-right:-90%;
-margin-top: 2%;
+margin-top: -85%;
 background:rgb(230, 231, 156);
 border-radius: 35%;
 color:rgb(207, 137, 111);

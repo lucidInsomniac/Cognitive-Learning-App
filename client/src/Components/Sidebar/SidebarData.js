@@ -21,7 +21,7 @@ export const SidebarData = [
     {
         //Home
         title: "Home",
-        path: "/home",
+        path: "/",
         icon: <FontAwesomeIcon icon={faIgloo} />
     },
     {
