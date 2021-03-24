@@ -1,10 +1,26 @@
 import React, { useState, useRef } from "react"; //useRef it stays constant between re renders
-import Piece1 from "../PuzzleImg/puzzle-1.png"
+import Piece1 from "../PuzzleImg/puzzle-1.png";
 import Piece2 from "../PuzzleImg/puzzle-2.png";
 import Piece3 from "../PuzzleImg/puzzle-3.png";
 import Piece4 from "../PuzzleImg/puzzle-4.png";
 import Piece5 from "../PuzzleImg/puzzle-5.png";
 import Cactus from "../PuzzleImg/the-cactus.png";
+
+const saveScore = (gameScore) => {
+  let options = {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(gameScore),
+  };
+  fetch("http://localhost:3000/server", options)
+    .then((response) => response.json())
+    .then((responseJson) => {
+      console.log("score saved");
+    })
+    .catch((err) => {
+      console.log("ERROR:", err.message);
+    });
+};
 
 function DragNDrop1({ data }) {
   const [list, setList] = useState(data);
@@ -71,14 +87,24 @@ function DragNDrop1({ data }) {
       if (startPiecesArray[i] === rightPiecesOrder[i]) {
         //if both arrays have the same elements
         console.log("You did it!");
+        return true;
       } else {
         console.log("Try again");
+        return false;
       }
     }
   };
 
   const handleIsSolvedClick = () => {
-    isSolved();
+    const gameName = "Image Puzzle 4";
+    if (isSolved()) {
+      saveScore({
+        game_name: gameName,
+        game_lvl: 4,
+        game_images: null,
+        completed: 1,
+      });
+    }
   };
 
   const handleTryAgainClick = () => {
@@ -111,7 +137,9 @@ function DragNDrop1({ data }) {
                 dragging ? (e) => handleDragEnter(e, { grpI, itemI }) : null
               }
               key={item}
-              className={dragging ? getStyles({ grpI, itemI }) : "img-puzzle-dnd-item"}
+              className={
+                dragging ? getStyles({ grpI, itemI }) : "img-puzzle-dnd-item"
+              }
             >
               {item === "1" && (
                 <img
@@ -156,8 +184,20 @@ function DragNDrop1({ data }) {
         <img src={Cactus} alt="cactus illustration" className="whole-cactus" />
       </div>
       <div className="puzzle-buttons">
-        <button id="puzzle-button" onClick={() => handleTryAgainClick()} className="lg-2 col background-warning">Try Again</button>
-        <button id="puzzle-button" onClick={() => handleIsSolvedClick()}className="lg-2 col background-warning">Done</button>
+        <button
+          id="puzzle-button"
+          onClick={() => handleTryAgainClick()}
+          className="lg-2 col background-warning"
+        >
+          Try Again
+        </button>
+        <button
+          id="puzzle-button"
+          onClick={() => handleIsSolvedClick()}
+          className="lg-2 col background-warning"
+        >
+          Done
+        </button>
       </div>
     </div>
   );
