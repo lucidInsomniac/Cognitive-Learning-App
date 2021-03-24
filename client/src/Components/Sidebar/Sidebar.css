@@ -2,6 +2,8 @@
 margin: 0 auto;
 }
 
+
+
 /*reusable css for root*/
 :root {
   font-size: 16px;
@@ -38,7 +40,7 @@ margin: 0 auto;
   justify-content: space-between;
   position: fixed;
   /* margin-left: -%; */
-  padding-top: 1%;
+  padding-top: 2%;
   height: 100%;
   width: 20rem;
   background: #ccbfe4;
@@ -48,7 +50,7 @@ margin: 0 auto;
   -webkit-box-direction: inherit;
   /*this keeps the sidebar on the left without
   using margin*/
-  left: 0;
+  left: -1.5%;
 
 }
 
