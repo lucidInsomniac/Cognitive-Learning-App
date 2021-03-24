@@ -28,6 +28,7 @@ router.post("/server", async (req, res) => {
         VALUES ('${game_name}', ${game_lvl},'${game_images}',${completed})
     `;
   try {
+
     let results = await db(sql);
     // Return *all* 
     results = await db("SELECT * FROM games");
