@@ -16,7 +16,7 @@ color:rgb(207, 137, 111);
 box-shadow: 2px 2px 2px darkblue;
 }
 
-img {
+img#banner {
   width: 50%;
   height: 25%;
   margin-left: 32.5%;

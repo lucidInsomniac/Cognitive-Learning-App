@@ -16,7 +16,7 @@ export default function DashboardView () {
             </div>
                <h1>Hi Daisie, <FontAwesomeIcon icon={faGrinBeam} className="welcome"/> Welcome Back!</h1>
             <diiv className="banner-container">
-                <img src={Banner} alt="child draws rocket" classname="banner"/>
+                <img src={Banner} alt="child draws rocket" id="banner" classname="banner"/>
             </diiv>
         </div>
 
