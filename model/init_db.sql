@@ -1,19 +1,30 @@
-DROP TABLE IF EXISTS image_puzzle;
-CREATE TABLE image_puzzle ( 
-image_id
+DROP TABLE IF EXISTS player;
+DROP TABLE IF EXISTS games;
+CREATE TABLE games ( 
+game_id
 INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-image_set
-VARCHAR(10) NOT NULL,
-difficulty_level
+game_name
+VARCHAR(20),
+game_lvl
 INT NOT NULL,
-player_name
-VARCHAR(20) NOT NULL,
-player_age
-INT NOT NULL,
-player_score
-INT NOT NULL,
-puzzle_completed
-varchar(10)  
+game_images
+VARCHAR(100),
+Completed
+BOOLEAN NOT NULL,
+game_score
+INT  
 );
 
 
+CREATE TABLE player ( 
+player_id
+INT NOT NULL AUTO_INCREMENT,
+player_name
+VARCHAR(20),
+player_age
+INT NOT NULL,
+game_id
+INT NOT NULL,
+PRIMARY KEY (player_id),
+FOREIGN KEY (game_id) REFERENCES games(game_id) 
+);
