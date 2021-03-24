@@ -8,7 +8,7 @@
      /*give height the same length as width and relation to font*/
      /*This gives the icon and text link a square shape*/
      height: 4.5rem;
-     /*use default fount color*/
+     /*use default font color*/
      color: var(--text-primary);
      /*text inside the link shows only when user hovers*/
      text-decoration: none;
@@ -16,7 +16,11 @@
      transition: var(--transition-speed); 
      margin-top: .7rem;
      margin-bottom: .7rem;
-     
+     /*This moves the items inside sidebar to the left*/
+     margin-right: 10%;
+     justify-content: space-between;
+     text-shadow: 2px 2px 2px lightseagreen;
+  
 }
 
 
@@ -25,11 +29,7 @@
   filter: grayscale(0%) opacity(1);
     background: var(--bg-secondary);
     color: var(--text-secondary);
-
 }
 
-.nav-icon {
-  width: 2rem;
-    min-width: 2rem;
-    margin: 0 1.5rem;
-}
+
+
