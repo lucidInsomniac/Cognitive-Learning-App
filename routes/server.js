@@ -22,10 +22,10 @@ router.get("/server", async (req, res) => {
 
 //POST
 router.post("/server", async (req, res) => {
-  let {game_name, game_lvl, game_images, completed} = req.body;
+  let {game_name, game_lvl, game_images, completed, game_score} = req.body;
   let sql = `
-        INSERT INTO games (game_name, game_lvl, game_images, completed) 
-        VALUES ('${game_name}', ${game_lvl},'${game_images}',${completed})
+        INSERT INTO games (game_name, game_lvl, game_images, completed, game_score) 
+        VALUES ('${game_name}', ${game_lvl},'${game_images}',${completed}, ${game_score})
     `;
   try {
 

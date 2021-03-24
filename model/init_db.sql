@@ -12,7 +12,7 @@ VARCHAR(100),
 Completed
 BOOLEAN NOT NULL,
 game_score
-INT  
+INT NOT NULL
 );
 
 
