@@ -16,7 +16,10 @@
      transition: var(--transition-speed); 
      margin-top: .7rem;
      margin-bottom: .7rem;
-     
+     /*This moves the items inside sidebar to the left*/
+     margin-right: 10%;
+     justify-content: space-between;
+  
 }
 
 
@@ -33,3 +36,5 @@
     min-width: 2rem;
     margin: 0 1.5rem;
 }
+
+
