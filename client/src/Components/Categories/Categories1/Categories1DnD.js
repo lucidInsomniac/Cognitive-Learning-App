@@ -104,10 +104,11 @@ function Categories({ categoriesData }) {
   };
 
   const handleIsSolvedClick = () => {
+    const gameName = "Categories 1";
     if (isSolved()) {
       saveScore({
-        game_name: "Categories 2",
-        game_lvl: 4,
+        game_name: gameName,
+        game_lvl: 1,
         game_images: null,
         completed: 1,
       });
