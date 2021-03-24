@@ -1,6 +1,8 @@
 import React from "react";
 // import Route and Switch from react-router-dom
 import { Route, Switch } from "react-router-dom";
+//import DashboardView
+import DashboardView from "../Header/DashboardView";
 //import the MainPuzzleView component
 import MainPuzzleView from "../ImagePuzzle/MainPuzzleView";
 //import Puzzle 1 component
@@ -41,8 +43,16 @@ import Situations2View from "../Situations/Situations2/Situations2View";
 import Situations3View from "../Situations/Situations3/Situations3View";
 //import Sitautions4View component
 import Situations4View from "../Situations/Situations4/Situations4View";
-//import MosaicsView component
-import MosaicsView from "../Mosaics/MosaicsView";
+//import MainMosaicsView component
+import MainMosaicsView from "../Mosaics/MainMosaicsView";
+//import Mosaics1View component
+import Mosaics1View from "../Mosaics/Mosaics1/Mosaics1View";
+//import Mosaics2View component
+import Mosaics2View from "../Mosaics/Mosaics2/Mosaics2View";
+//import Mosaics3View component
+import Mosaics3View from "../Mosaics/Mosaics3/Mosaics3View";
+//import Mosaics4View component
+import Mosaics4View from "../Mosaics/Mosaics4/Mosaics4View";
 //import MainAnalogiesView component
 import MainAnalogiesView from "../Analogies/MainAnalogiesView";
 //import Analogies1View component
@@ -54,7 +64,7 @@ import Analogies3View from "../Analogies/Analogies3/Analogies3View";
 //import Analogies4View component
 import Analogies4View from "../Analogies/Analogies4/Analogies4View";
 //import ASL WordPlay component
-import ASLWordPlay from "../ASLWordPlay/ASLWordPlay";
+// import ASLWordPlay from '../ASLWordPlay/ASLWordPlay'
 //import Resources component
 import Resources from "../Resources/Resources";
 
@@ -64,6 +74,11 @@ export default function Routes(props) {
     <Switch>
       <div className="Routes">
         <header className="Routes-header">
+          <Route path="/" exact>
+            {/* This is the Component for DashboardView */}
+            <DashboardView />
+          </Route>
+
           <Route path="/image_puzzle_list">
             {/* This is the Component for Puzzle */}
             <MainPuzzleView />
@@ -166,7 +181,27 @@ export default function Routes(props) {
 
           <Route path="/mosaics">
             {/* This is the Component for Mosaics  */}
-            <MosaicsView />
+            <MainMosaicsView />
+          </Route>
+
+          <Route path="/mosaics1">
+            {/* This is the Component for Mosaics  */}
+            <Mosaics1View />
+          </Route>
+
+          <Route path="/mosaics2">
+            {/* This is the Component for Mosaics  */}
+            <Mosaics2View />
+          </Route>
+
+          <Route path="/mosaics3">
+            {/* This is the Component for Mosaics  */}
+            <Mosaics3View />
+          </Route>
+
+          <Route path="/mosaics4">
+            {/* This is the Component for Mosaics  */}
+            <Mosaics4View />
           </Route>
 
           <Route path="/analogies">

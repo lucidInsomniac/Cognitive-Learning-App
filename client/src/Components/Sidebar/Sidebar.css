@@ -1,7 +1,11 @@
+.Sidebar {
+  margin: 0 auto;
+}
+
 /*reusable css for root*/
 :root {
   font-size: 16px;
-  --text-primary: #b6b6b6;
+  --text-primary: #555252;
   --text-secondary: #ececec;
   --bg-primary: #23232e;
   --bg-secondary: #141418;
@@ -21,6 +25,7 @@
   padding: 0;
   margin: 0;
   height: 100%;
+  width: 100%;
 }
 
 /*This moves the entire sidebar*/
@@ -28,13 +33,20 @@
   /* border: 5px solid black; */
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   position: fixed;
-  margin-left: -88%;
-  padding-top: 1%;
+  /* margin-left: -%; */
+  padding-top: 2%;
   height: 100%;
-  width: 15rem;
+  width: 20rem;
   background: #ccbfe4;
   overflow: scroll;
+  text-align: center;
+  box-sizing: inherit;
+  -webkit-box-direction: inherit;
+  /*this keeps the sidebar on the left without
+  using margin*/
+  left: -1.5%;
 }
 
 /*This is a psuedo element on sidebar that we are targeting
@@ -54,6 +66,6 @@ to get rid of any ugly default scrollbars*/
 }
 
 .hippo {
-  margin-left: 10%;
+  margin-left: 3%;
   margin-bottom: 5%;
 }

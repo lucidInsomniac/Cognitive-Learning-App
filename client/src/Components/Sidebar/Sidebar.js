@@ -14,14 +14,18 @@ export default function Sidebar () {
     <div className="Sidebar">
         <div className="nav">
           <nav className="navbar">
-          <FontAwesomeIcon icon={faHippo} size="5x" className="hippo" />
+            <ul className="navbar-nav">
+              <FontAwesomeIcon icon={faHippo} size="5x" className="hippo" />
             {SidebarData.map((item, index) => {
 
               return (
+
                 <SubMenu item={item} key={index} />
+               
               ) 
               
             })}
+            </ul>
           </nav>
         </div>
     </div>
