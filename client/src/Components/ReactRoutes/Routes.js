@@ -1,6 +1,8 @@
 import React from 'react'
 // import Route and Switch from react-router-dom
 import {Route, Switch} from 'react-router-dom'
+//import DashboardView
+import DashboardView from '../Header/DashboardView'
 //import the MainPuzzleView component
 import MainPuzzleView from '../ImagePuzzle/MainPuzzleView'
     //import Puzzle 1 component
@@ -67,6 +69,8 @@ import MainAnalogiesView from '../Analogies/MainAnalogiesView'
 import Resources from '../Resources/Resources'
 
 
+
+
 export default function Routes (props) {
     return (
         // Allows you to switch paths when clicked
@@ -74,6 +78,12 @@ export default function Routes (props) {
         
             <div className="Routes">
                 <header className="Routes-header">
+
+                    <Route path="/" exact>
+                        {/* This is the Component for DashboardView */}
+                        <DashboardView  />
+                    </Route>
+
                     <Route path="/image_puzzle_list">
                         {/* This is the Component for Puzzle */}
                         <MainPuzzleView />
