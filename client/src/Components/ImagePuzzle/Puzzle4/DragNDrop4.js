@@ -103,6 +103,7 @@ function DragNDrop1({ data }) {
         game_lvl: 4,
         game_images: null,
         completed: 1,
+        game_score:0
       });
     }
   };

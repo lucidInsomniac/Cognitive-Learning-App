@@ -1,12 +1,14 @@
+//Game_score for function is mainly for situations
+
 import React, { useState, useRef } from "react"; //useRef it stays constant between re renders
-import Cow from "../CatImg/cow.jpg";
-import Duck from "../CatImg/duck.jpg";
-import Gallo from "../CatImg/gallo.jpg";
-import Horse from "../CatImg/horse.jpg";
-import Piggy from "../CatImg/piggy.jpg";
-import Tree from "../CatImg/tree.jpg";
-import Books from "../CatImg/books.jpg";
-import House from "../CatImg/house.jpg";
+import Taxi from "../CatImg/taxi.png";
+import Police from "../CatImg/police.png";
+import Ambul from "../CatImg/ambulance.png";
+import Icecream from "../CatImg/icecream.png";
+import Bus from "../CatImg/schoolbus.png";
+import Bicycle from "../CatImg/bicycle.jpg";
+import Redbike from "../CatImg/redbike.png";
+import Bike from "../CatImg/bike.png";
 import "./Categories2.css";
 
 const saveScore = (gameScore) => {
@@ -111,6 +113,7 @@ function Categories({ categoriesData }) {
         game_lvl: 1,
         game_images: null,
         completed: 1,
+        game_score:0
       });
     }
   };
@@ -156,36 +159,36 @@ function Categories({ categoriesData }) {
             >
               {item === "1" && (
                 <img
-                  src={Gallo}
-                  alt="colorful rooster"
+                  src={Taxi}
+                  alt="yellow taxi"
                   className="category-card"
                 />
               )}
               {item === "2" && (
-                <img src={Cow} alt="vector cow" className="category-card" />
+                <img src={Police} alt="police car" className="category-card" />
               )}
               {item === "3" && (
                 <img
-                  src={Duck}
-                  alt="walking duck"
+                  src={Ambul}
+                  alt="ambulance car"
                   className="category-card  duck-img"
                 />
               )}
               {item === "6" && (
-                <img src={Piggy} alt="tall horse" className="category-card" />
+                <img src={Icecream} alt="icecream car" className="category-card" />
               )}
 
               {item === "7" && (
-                <img src={Tree} alt="tall horse" className="category-card" />
+                <img src={Redbike} alt="red bike" className="category-card" />
               )}
               {item === "8" && (
-                <img src={Books} alt="tall horse" className="category-card" />
+                <img src={Bicycle} alt="green bicycle" className="category-card" />
               )}
               {item === "9" && (
-                <img src={Horse} alt="tall horse" className="category-card" />
+                <img src={Bus} alt="school bus" className="category-card" />
               )}
               {item === "10" && (
-                <img src={House} alt="tall horse" className="category-card" />
+                <img src={Bike} alt="cool bike" className="category-card" />
               )}
             </div>
           ))}
