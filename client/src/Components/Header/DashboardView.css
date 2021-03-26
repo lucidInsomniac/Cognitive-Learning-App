@@ -1,20 +1,24 @@
 /* This is used to check for container space */
-/* .icon-container{
+.icon-container{
   background: black;
-  
-} */
+  width: 0%;
+  margin-left: 92.5%;
+  margin-top:-2%;
+}
+
+
 .DashboardView {
   margin-bottom: 40%;
 }
 
 .avatar {
-margin-right:-90%;
-margin-top: -85%;
 background:rgb(230, 231, 156);
 border-radius: 35%;
 color:rgb(207, 137, 111);
 box-shadow: 2px 2px 2px darkblue;
+
 }
+
 
 img#banner {
   width: 50%;
@@ -37,5 +41,18 @@ h1 {
 .welcome {
     margin-right: 2%;
     margin-left: 2%;
-    
+}
+
+th#thead {
+  /*to check location on table*/
+  /* background: black; */
+  text-align: center;
+}
+
+table {
+  text-shadow: 4px 4px 4px lightslategray;
+}
+
+.total-score-container {
+  text-shadow: 4px 4px 4px lightslategray;
 }
