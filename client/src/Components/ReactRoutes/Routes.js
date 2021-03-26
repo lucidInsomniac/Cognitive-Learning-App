@@ -67,23 +67,34 @@ import MainAnalogiesView from '../Analogies/MainAnalogiesView'
 // import ASLWordPlay from '../ASLWordPlay/ASLWordPlay'
 //import Resources component
 import Resources from '../Resources/Resources'
+//import Profile
+import ProfileView from '../Profile/ProfileView'
 
 
 
 
-export default function Routes (props) {
+export default function Routes ( { games } ) {
+    //will need to pass down matching game with game id as property
+    //based on the who the player is (player_id)
+    
     return (
         // Allows you to switch paths when clicked
         <Switch>
         
             <div className="Routes">
                 <header className="Routes-header">
-
-                    <Route path="/" exact>
-                        {/* This is the Component for DashboardView */}
-                        <DashboardView  />
+                   
+                    <Route path="/profile">
+                         {/* This brings us to the Profile Page, 
+                            but it doesn't affect the Sidebar links */}
+                        <ProfileView  />
                     </Route>
 
+                    <Route path="/" exact>
+                        {/* This is the Component for Home */}
+                        <DashboardView  />
+                    </Route>
+                    
                     <Route path="/image_puzzle_list">
                         {/* This is the Component for Puzzle */}
                         <MainPuzzleView />
