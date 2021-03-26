@@ -1,11 +1,24 @@
-import React from 'react'
+import React from "react";
+import Categories2Dnd from "./Categories2Dnd.js";
+const categoriesData = [
+  {
+    title: "Transportation",
+    items: ["1", "2", "3"],
+  },
 
-export default function Categories2View () {
+  {
+    title: "Let's play!",
+    items: ["6", "7", "8", "9", "10"],
+  },
+];
 
-    return (
-
-        <div className="Categories2View">
-            <header>This is for Categories 2</header>
-        </div>
-    ) 
+export default function Categories2View() {
+  return (
+    <div className="Categories2View">
+      <header>
+        This is for Categories 2
+        <Categories2Dnd categoriesData={categoriesData} />
+      </header>
+    </div>
+  );
 }
