@@ -111,7 +111,10 @@ function Categories({ categoriesData }) {
         game_lvl: 1,
         game_images: null,
         completed: 1,
-        game_score:0
+        //1 point for each categories
+        //to allow game_score to add properly 
+        //on progress table
+        game_score:1
       });
     }
   };
