@@ -166,7 +166,11 @@ function Categories({ categoriesData }) {
                 />
               )}
               {item === "2" && (
-                <img src={Cow} alt="vector cow" className="category-card" />
+                <img 
+                  src={Cow} 
+                  alt="vector cow" 
+                  className="category-card" 
+                />
               )}
               {item === "3" && (
                 <img

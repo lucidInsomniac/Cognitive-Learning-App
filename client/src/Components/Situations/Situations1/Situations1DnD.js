@@ -102,7 +102,8 @@ export default function Situations1DnD({ situationsData }) {
 
     for (let i = 0; i < firstHalfPizzaArray.length; i++) {
       if (firstHalfPizzaArray[i][0] !== secondHalfPizzaArray[i][0]) {
-        //line 106 removes annoyin lint warning that does not affect code
+        //This removes the eslint warning in the yarn start for client
+        //and allows for yarn build to execute without errors
         // eslint-disable-next-line
         match = false;
       } else {
