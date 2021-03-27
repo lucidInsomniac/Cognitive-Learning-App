@@ -5,7 +5,9 @@ export default function MainCategoriesView () {
     return (
 
         <div className="MainCategoriesView ">
-            <header>This is the Main Categories Page</header>
+            <div className="puzz-header-container">
+                <h1>This is the Main Categories Page</h1> 
+            </div>
 
             <div className="row flex-spaces child-borders">
                 <label 
@@ -78,7 +80,6 @@ export default function MainCategoriesView () {
 
                 </div>
             </div>
-
 
         </div>
         

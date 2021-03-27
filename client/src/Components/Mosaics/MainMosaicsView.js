@@ -7,7 +7,9 @@ export default function MainMosaicsView () {
     return (
 
         <div className="MainMosaicsView">
-            <header>This is the Main Mosaics Page</header>
+            <div className="puzz-header-container">
+                <h1>This is the Main Mosaics Page</h1> 
+            </div>
 
 
             <div className="row flex-spaces child-borders">
