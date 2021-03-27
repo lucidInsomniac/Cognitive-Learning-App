@@ -96,14 +96,17 @@ function DragNDrop1({ data }) {
   };
 
   const handleIsSolvedClick = () => {
-    const gameName = "Image Puzzle 4";
+    const gameName = "Puzzle 4";
     if (isSolved()) {
       saveScore({
         game_name: gameName,
         game_lvl: 4,
         game_images: null,
         completed: 1,
-        game_score:0
+        //1 point for each puzzle
+        //to allow game_score to add properly 
+        //on progress table
+        game_score:1
       });
     }
   };

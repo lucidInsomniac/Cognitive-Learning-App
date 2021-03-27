@@ -1,3 +1,4 @@
+-- Name of puzzle game should be called "Puzzle" to stay consistant with Sidebar menu
 DROP TABLE IF EXISTS player;
 DROP TABLE IF EXISTS games;
 CREATE TABLE games ( 
