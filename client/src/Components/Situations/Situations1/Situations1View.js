@@ -14,9 +14,13 @@ const situationsData = [
   ];
 
 export default function Situations1View () {
+
     return (
+
         <div className="SituationsView">
              <Situations1DnD situationsData={situationsData} />
         </div>
+        
     )
+
 }

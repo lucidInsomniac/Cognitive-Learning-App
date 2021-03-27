@@ -130,93 +130,119 @@ function Categories({ categoriesData }) {
   };
 
   return (
-    <div className="categories-drag-n-drop">
-      {/* here we iterate through groups*/}
-      {list.map((grp, grpI) => (
-        <div
-          key={grp.title}
-          className="categories-dnd-group"
-          onDragEnter={
-            dragging && !grp.items.length
-              ? (e) => handleDragEnter(e, { grpI, itemI: 0 })
-              : null
-          }
-        >
-          <div className="categories-group-title">{grp.title}</div>
-          {/* here we iterate through items*/}
-          {grp.items.map((item, itemI) => (
+
+      <div className="categories-drag-n-drop">
+
+        {/* here we iterate through groups*/}
+        {list.map((grp, grpI) => (
+
             <div
-              draggable
-              onDragStart={(e) => {
-                handleDragStart(e, { grpI, itemI }); //here we are passing the coordinates by index to a specific item
-              }}
+              key={grp.title}
+              className="categories-dnd-group"
               onDragEnter={
-                dragging ? (e) => handleDragEnter(e, { grpI, itemI }) : null
-              }
-              key={item}
-              className={
-                dragging ? getStyles({ grpI, itemI }) : "categories-dnd-item"
+                dragging && !grp.items.length
+                  ? (e) => handleDragEnter(e, { grpI, itemI: 0 })
+                  : null
               }
             >
-              {item === "1" && (
-                <img
-                  src={Gallo}
-                  alt="colorful rooster"
-                  className="category-card"
-                />
-              )}
-              {item === "2" && (
-                <img 
-                  src={Cow} 
-                  alt="vector cow" 
-                  className="category-card" 
-                />
-              )}
-              {item === "3" && (
-                <img
-                  src={Duck}
-                  alt="walking duck"
-                  className="category-card  duck-img"
-                />
-              )}
-              {item === "6" && (
-                <img src={Piggy} alt="tall horse" className="category-card" />
-              )}
+                <div className="categories-group-title">{grp.title}</div>
 
-              {item === "7" && (
-                <img src={Tree} alt="tall horse" className="category-card" />
-              )}
-              {item === "8" && (
-                <img src={Books} alt="tall horse" className="category-card" />
-              )}
-              {item === "9" && (
-                <img src={Horse} alt="tall horse" className="category-card" />
-              )}
-              {item === "10" && (
-                <img src={House} alt="tall horse" className="category-card" />
-              )}
+                {/* here we iterate through items*/}
+                {grp.items.map((item, itemI) => (
+                  <div
+                    draggable
+                    onDragStart={(e) => {
+                      handleDragStart(e, { grpI, itemI }); //here we are passing the coordinates by index to a specific item
+                    }}
+                    onDragEnter={
+                      dragging ? (e) => handleDragEnter(e, { grpI, itemI }) : null
+                    }
+                    key={item}
+                    className={
+                      dragging ? getStyles({ grpI, itemI }) : "categories-dnd-item"
+                    }
+                  >
+                      {item === "1" && (
+                        <img
+                          src={Gallo}
+                          alt="colorful rooster"
+                          className="category-card"
+                        />
+                      )}
+                      {item === "2" && (
+                        <img 
+                          src={Cow} 
+                          alt="vector cow" 
+                          className="category-card" 
+                        />
+                      )}
+                      {item === "3" && (
+                        <img
+                          src={Duck}
+                          alt="walking duck"
+                          className="category-card  duck-img"
+                        />
+                      )}
+                      {item === "6" && (
+                        <img 
+                          src={Piggy} 
+                          alt="tall horse" 
+                          className="category-card" 
+                        />
+                      )}
+
+                      {item === "7" && (
+                        <img 
+                          src={Tree} 
+                          alt="tall horse" 
+                          className="category-card" 
+                        />
+                      )}
+                      {item === "8" && (
+                        <img 
+                          src={Books} 
+                          alt="tall horse" 
+                          className="category-card" 
+                        />
+                      )}
+                      {item === "9" && (
+                        <img 
+                          src={Horse} 
+                          alt="tall horse" 
+                          className="category-card" 
+                        />
+                      )}
+                      {item === "10" && (
+                        <img 
+                          src={House} 
+                          alt="tall horse" 
+                          className="category-card" 
+                        />
+                      )}
+                  </div>
+              ))}
             </div>
-          ))}
-        </div>
-      ))}
-      <div className="categories-buttons">
-        <button
-          id="categories"
-          onClick={() => handleTryAgainClick()}
-          className="lg-2 col background-warning"
-        >
-          Try Again
-        </button>
-        <button
-          id="categories"
-          onClick={() => handleIsSolvedClick()}
-          className="lg-2 col background-warning"
-        >
-          Done
-        </button>
+        ))}
+            <div className="categories-buttons">
+                <button
+                  id="categories"
+                  onClick={() => handleTryAgainClick()}
+                  className="lg-2 col background-warning"
+                >
+                  Try Again
+                </button>
+                
+                <button
+                  id="categories"
+                  onClick={() => handleIsSolvedClick()}
+                  className="lg-2 col background-warning"
+                >
+                  Done
+                </button>
+            </div>
       </div>
-    </div>
   );
+
 }
 
 export default Categories;

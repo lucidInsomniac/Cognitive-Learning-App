@@ -23,6 +23,7 @@ export const SidebarData = [
         title: "Home",
         path: "/",
         icon: <FontAwesomeIcon icon={faIgloo} />
+
     },
     {
         //ImagePuzzle
@@ -53,6 +54,7 @@ export const SidebarData = [
                 path: "/image_puzzle4",
                 icon: <FontAwesomeIcon icon={faPuzzlePiece} />
             }
+
         ]
     },
     {
@@ -87,7 +89,8 @@ export const SidebarData = [
                     title: "Categories 4",
                     path: "/categories4",
                     icon: <FontAwesomeIcon icon={faCat} />
-                },
+                }
+
             ]
     },
     {
@@ -246,7 +249,6 @@ export const SidebarData = [
         title: "Resources",
         path: "/resources",
         icon: <FontAwesomeIcon icon={faBookmark} />
-    },
-
+    }
     
 ]
