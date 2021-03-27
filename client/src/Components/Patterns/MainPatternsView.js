@@ -5,7 +5,9 @@ export default function MainPatternsView () {
     return (
 
         <div className="MainPatternsView ">
-            <header>This is the Main Patterns Page</header>
+            <div className="puzz-header-container">
+                <h1>This is the Main Patterns Page</h1> 
+            </div>
 
 
             <div className="row flex-spaces child-borders">

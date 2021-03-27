@@ -5,7 +5,9 @@ export default function MainSituationsView () {
     return (
 
         <div className="MainSituationsView">
-            <header>This is the Main Situations Page</header>
+            <div className="puzz-header-container">
+                <h1>This is the Main Situations Page</h1> 
+            </div>
 
             <div className="row flex-spaces child-borders">
                 <label 
