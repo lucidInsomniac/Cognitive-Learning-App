@@ -1,3 +1,4 @@
+import React from 'react'
 import Categories1DnD from './Categories1DnD'
 
 
@@ -14,13 +15,19 @@ const categoriesData = [
 ];
 
 function Categories1View() {
+
   return (
-    <div className="Categories1View">
-      <header className="Categories1View-header">
-        <Categories1DnD categoriesData={categoriesData} />
-      </header>
-    </div>
+
+      <div className="Categories1View">
+
+          <header className="Categories1View-header">
+            <Categories1DnD categoriesData={categoriesData} />
+          </header>
+
+      </div>
+
   );
+
 }
 
 export default Categories1View;

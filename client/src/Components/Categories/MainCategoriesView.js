@@ -7,5 +7,7 @@ export default function MainCategoriesView () {
         <div className="MainCategoriesView ">
             <header>This is the Main Categories Page</header>
         </div>
+        
     ) 
+
 }

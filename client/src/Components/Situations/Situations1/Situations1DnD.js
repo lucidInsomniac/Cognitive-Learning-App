@@ -150,111 +150,116 @@ export default function Situations1DnD({ situationsData }) {
 
   return (
     <div className="Situations1DnD">
-      <div className="situations-drag-n-drop">
-        {/* here we iterate through groups*/}
-        {list.map((grp, grpI) => (
-          <div
-            key={grp.title}
-            className="situations-dnd-group"
-            onDragEnter={
-              dragging && !grp.items.length
-                ? (e) => handleDragEnter(e, { grpI, itemI: 0 })
-                : null
-            }
-          >
-            <div className="situations-group-title">{grp.title}</div>
-            {/* here we iterate through items*/}
-            {grp.items.map((item, itemI) => (
-              <div
-                draggable
-                onDragStart={(e) => {
-                  handleDragStart(e, { grpI, itemI }); //here we are passing the coordinates by index to a specific item
-                }}
-                onDragEnter={
-                  dragging ? (e) => handleDragEnter(e, { grpI, itemI }) : null
-                }
-                key={item}
-                className={
-                  dragging ? getStyles({ grpI, itemI }) : "situations-dnd-item"
-                }
-              >
-                {item === "1a" && (
-                  <img
-                    src={HawaiiOne}
-                    alt="hawaiian pizza"
-                    className=" group-one category-card"
-                  />
-                )}
-                {item === "2a" && (
-                  <img
-                    src={VeggieOne}
-                    alt="veggie pizza"
-                    className=" group-one category-card"
-                  />
-                )}
-                {item === "3a" && (
-                  <img
-                    src={ShrimpOne}
-                    alt="shrimp pizza"
-                    className=" group-one category-card"
-                  />
-                )}
-                {item === "4a" && (
-                  <img
-                    src={BlackOlivesOne}
-                    alt="black olives pizza"
-                    className="group-one category-card"
-                  />
-                )}
-                {item === "1b" && (
-                  <img
-                    src={HawaiiTwo}
-                    alt="hawaiian pizza"
-                    className="group-two category-card"
-                  />
-                )}
-                {item === "2b" && (
-                  <img
-                    src={VeggieTwo}
-                    alt="veggie pizza"
-                    className="group-two category-card"
-                  />
-                )}
-                {item === "3b" && (
-                  <img
-                    src={ShrimpTwo}
-                    alt="shrimp pizza"
-                    className="group-two category-card"
-                  />
-                )}
-                {item === "4b" && (
-                  <img
-                    src={BlackOlivesTwo}
-                    alt="black olives pizza"
-                    className="group-two category-card"
-                  />
-                )}
-              </div>
-            ))}
-          </div>
-        ))}
-        <div className="pizza-buttons">
-          <button
-            id="pizza"
-            onClick={() => handleTryAgainClick()}
-            className="lg-2 col background-warning"
-          >
-            Try Again
-          </button>
-          <button
-            id="pizza"
-            onClick={() => handleIsSolvedClick()}
-            className="lg-2 col background-warning"
-          >
-            Done
-          </button>
+        <div className="situations-drag-n-drop">
+            {/* here we iterate through groups*/}
+            {list.map((grp, grpI) => (
+            <div
+              key={grp.title}
+              className="situations-dnd-group"
+              onDragEnter={
+                dragging && !grp.items.length
+                  ? (e) => handleDragEnter(e, { grpI, itemI: 0 })
+                  : null
+              }
+            >
+                <div className="situations-group-title">{grp.title}</div>
+                
+                  {/* here we iterate through items*/}
+                  {grp.items.map((item, itemI) => (
+
+                  <div
+                    draggable
+                    onDragStart={(e) => {
+                      handleDragStart(e, { grpI, itemI }); //here we are passing the coordinates by index to a specific item
+                    }}
+                    onDragEnter={
+                      dragging ? (e) => handleDragEnter(e, { grpI, itemI }) : null
+                    }
+                    key={item}
+                    className={
+                      dragging ? getStyles({ grpI, itemI }) : "situations-dnd-item"
+                    }
+                  >
+                      {item === "1a" && (
+                        <img
+                          src={HawaiiOne}
+                          alt="hawaiian pizza"
+                          className=" group-one category-card"
+                        />
+                      )}
+                      {item === "2a" && (
+                        <img
+                          src={VeggieOne}
+                          alt="veggie pizza"
+                          className=" group-one category-card"
+                        />
+                      )}
+                      {item === "3a" && (
+                        <img
+                          src={ShrimpOne}
+                          alt="shrimp pizza"
+                          className=" group-one category-card"
+                        />
+                      )}
+                      {item === "4a" && (
+                        <img
+                          src={BlackOlivesOne}
+                          alt="black olives pizza"
+                          className="group-one category-card"
+                        />
+                      )}
+                      {item === "1b" && (
+                        <img
+                          src={HawaiiTwo}
+                          alt="hawaiian pizza"
+                          className="group-two category-card"
+                        />
+                      )}
+                      {item === "2b" && (
+                        <img
+                          src={VeggieTwo}
+                          alt="veggie pizza"
+                          className="group-two category-card"
+                        />
+                      )}
+                      {item === "3b" && (
+                        <img
+                          src={ShrimpTwo}
+                          alt="shrimp pizza"
+                          className="group-two category-card"
+                        />
+                      )}
+                      {item === "4b" && (
+                        <img
+                          src={BlackOlivesTwo}
+                          alt="black olives pizza"
+                          className="group-two category-card"
+                        />
+                      )}
+                  </div>
+                ))}
+            </div>
+          ))}
+
+            <div className="pizza-buttons">
+                <button
+                  id="pizza"
+                  onClick={() => handleTryAgainClick()}
+                  className="lg-2 col background-warning"
+                >
+                  Try Again
+                </button>
+
+                <button
+                  id="pizza"
+                  onClick={() => handleIsSolvedClick()}
+                  className="lg-2 col background-warning"
+                >
+                  Done
+                </button>
+
+            </div>
         </div>
-      </div>
     </div>
   );
 }

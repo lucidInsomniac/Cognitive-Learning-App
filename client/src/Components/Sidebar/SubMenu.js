@@ -6,44 +6,74 @@ import './SubMenu.css'
 
 
 const SubMenu = ({ item }) => {
+  //initial state for subnav menu
   const [subnav, setSubnav] = useState(false);
 
+  //hook to show submenu items
   const showSubnav = () => setSubnav(!subnav);
 
   return (
-    <div className="SubMenu">
-      <Link to={item.path} className="sidebar-link" onClick={item.subNav && showSubnav}>
-       
-        <div className="sidebar-icon">
-          {item.icon}
-        </div>
 
-        <span id="submenu" className="tex-secondary">{item.title}</span>
+      <div className="SubMenu">
         
-        <div className="subnav">
-          {item.subNav && subnav
-            ? item.iconOpened
-            : item.subNav
-            ? item.iconClosed
-            : null}
-        </div>
-
-      </Link>
-      {subnav &&
-        item.subNav.map((item, index) => {
-          return (
-            <Link to={item.path} className="dropdown-link" key={index}>
-              <div className="nav-icon">
-                {item.icon}
+          <Link 
+            to={item.path} 
+            className="sidebar-link" 
+            onClick={item.subNav && showSubnav}
+          >
+          
+              <div className="sidebar-icon">
+                  {item.icon}
               </div>
 
-              <span className="dropdown-link">{item.title}</span>
+              <span 
+              id="submenu" 
+              className="tex-secondary"
+              >
+                  {item.title}
+              </span>
               
-            </Link>
-          );
-        })}
-    </div>
+              <div className="subnav">
+                  {item.subNav && subnav
+                    ? item.iconOpened
+                    : item.subNav
+                    ? item.iconClosed
+                    : null}
+              </div>
+
+          </Link>
+
+          {subnav &&
+            item.subNav.map((item, index) => {
+
+              return (
+
+                <Link 
+                  to={item.path} 
+                  className="dropdown-link" 
+                  key={index}
+                >
+
+                    <div className="nav-icon">
+                        {item.icon}
+                    </div>
+
+                    <span 
+                    className="dropdown-link"
+                    >
+                        {item.title}
+                    </span>
+                  
+                </Link>
+
+              );
+
+            })}
+
+      </div>
+      
   );
+
 };
 
 export default SubMenu;

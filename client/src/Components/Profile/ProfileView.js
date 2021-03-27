@@ -15,7 +15,7 @@ export default function ProfileView () {
     const [games, setGames] = useState([]);
     
 
-    //put useEffect to pull data for user here
+    //put useEffect to pull data for player here
     useEffect(() => {
         //this connects to the server.js routes
         fetch("/server")
@@ -37,30 +37,39 @@ export default function ProfileView () {
         //gets saved into an empty state as new array
     }, []); 
 
+
+
     //check array values for game to extract game_score
     console.log("games array check", games[0])
 
     //to extract game_score, need to map games
    let gameScore = games.map((game) => (game.game_score))
+
    //check to see if each game_score was extracted
    console.log("gameScore", gameScore)
 
+
    //create a totalScore function with extracted game_score
    function totalScore (gameScore) {
+
        //use reduce method on gameScore array to 
        //add values from each game_score from games
        let total = gameScore.reduce( (a, b) => a + b, 0);
+
        //to use the sum, we need to call it in the return
        return (
+
          <h3>Total Score: { total }</h3>
+
        )
-   }
+   };
 
       
 
     return (
 
         <div className="ProfileView">
+
             <div className="profile-header-container">
                 <h1>Daisie's Journey 
                     <FontAwesomeIcon 
@@ -79,37 +88,46 @@ export default function ProfileView () {
             </div>
 
             <div className="table-container">
-
                 {/* Our table starts here */}
                 <table className="table-hover">
+
                     {/* This is where the titles of each table column goes */}
                     <thead id="thead">
+
                         <tr id="thead">
+
                             <th id="thead">Game Name</th>
                             <th id="thead">Game Level</th>
                             <th id="thead">Game Score</th>
+
                         </tr>
+
                     </thead>
+
 
                     {/* This is where the data inside the progress table will be displayed */}
                     <tbody>
 
                         {/* We map games here to get it to display
                         our games data from the database using useEffect */}
+
                         {
                             games && games.map( (game, index ) => (
+
                                 <tr className="keyrow" key={ index }>
+
                                     <td key={index}>{game.game_name}</td>
                                     <td key={index}>{game.game_lvl}</td>
                                     <td key={index}>{game.game_score}</td>
+
                                 </tr>
+
                             ))
                         }
+
                     </tbody>
 
-
                 </table>
-
             </div>
 
             <div className="total-score-container">

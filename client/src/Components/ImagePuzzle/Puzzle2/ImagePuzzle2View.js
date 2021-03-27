@@ -7,5 +7,7 @@ export default function ImagePuzzle2View () {
         <div className="ImagePuzzle2View">
             <header>This is for Puzzle 2</header>
         </div>
+        
     ) 
+
 }
