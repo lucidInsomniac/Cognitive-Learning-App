@@ -111,7 +111,7 @@ function Categories({ categoriesData }) {
         game_lvl: 1,
         game_images: null,
         completed: 1,
-        game_score:0
+        game_score: 0,
       });
     }
   };
