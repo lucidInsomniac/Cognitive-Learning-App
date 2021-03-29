@@ -2,7 +2,6 @@
   text-align: center;
   width: 100%;
   /* height: 100vh; */
-  
 }
 
 /*This is the container for the columns, cards and img*/
@@ -20,18 +19,16 @@
   grid-template-columns: repeat(3, 300px);
   /* Check where cointainer is located */
   /* background: black; */
-  
 }
 
 .img-puzzle-dnd-group {
-  background: #757575;
+  background: #6f6482;
   border-radius: 5px;
-  padding: 0.5rem;  
+  padding: 0.5rem;
   margin-bottom: -10%;
   width: 100%;
   height: 90vh;
 }
-
 
 .img-puzzle-group-title {
   margin-bottom: 0.5rem;
@@ -57,7 +54,6 @@
 
 p {
   align-self: center;
-  
 }
 
 .img-puzzle-piece {
@@ -67,7 +63,6 @@ p {
   height: 100%;
   grid-template-columns: repeat(2, 300px);
   border-radius: 5px;
-  
 }
 
 img.img-puzzle-piece {
@@ -98,7 +93,6 @@ img
   /*used to check location on page*/
   /* border: 5px solid thick black; */
   /* background: grey; */
- 
 }
 
 /*this moves the specific container for img*/
@@ -106,14 +100,13 @@ div.cactus-img {
   /* this moves the img into position within container */
   align-self: center;
   margin-top: 10%;
-  
 }
 
 /*This is the container for buttons
 need to call it by the parent tag then classname*/
 div.puzzle-buttons {
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   /* justify-self:flex-start; */
   position: relative;
   width: 50%;
@@ -123,8 +116,6 @@ div.puzzle-buttons {
   margin-left: 450%;
   margin-right: 0%;
   margin-top: -200%;
-
-  
 }
 
 button#puzzle-button {
@@ -136,5 +127,4 @@ button#puzzle-button {
   padding-top: 5%;
   padding-bottom: 5%;
   margin-bottom: 100%;
-
 }

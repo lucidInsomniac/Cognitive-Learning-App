@@ -1,0 +1,13 @@
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.player-age {
+  justify-self: start;
+}
+
+.player-name {
+  justify-self: end;
+}
