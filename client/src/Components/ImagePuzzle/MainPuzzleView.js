@@ -79,6 +79,7 @@ export default function MainPuzzleView () {
                     </label>
 
                 </div>
+                
             </div>
 
         </div>

@@ -5,31 +5,60 @@ import Piece3 from "../PuzzleImg/puzzle-3.png";
 import Piece4 from "../PuzzleImg/puzzle-4.png";
 import Piece5 from "../PuzzleImg/puzzle-5.png";
 import Cactus from "../PuzzleImg/the-cactus.png";
+import Solved from './dropCards/Solved'
+import TryAgain from './dropCards/TryAgain'
 
-
-const saveScore = (gameScore) => {
-  let options = {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(gameScore),
-  };
-  fetch("http://localhost:3000/server", options)
-    .then((response) => response.json())
-    .then((responseJson) => {
-      console.log("score saved");
-    })
-    .catch((err) => {
-      console.log("ERROR:", err.message);
-    });
-};
+// const saveScore = (gameScore) => {
+//   let options = {
+//     method: "POST",
+//     headers: { "Content-Type": "application/json" },
+//     body: JSON.stringify(gameScore),
+//   };
+//   fetch("http://localhost:3000/server", options)
+//     .then((response) => response.json())
+//     .then((responseJson) => {
+//       console.log("score saved");
+//     })
+//     .catch((err) => {
+//       console.log("ERROR:", err.message);
+//     });
+// };
 
 
 function DragNDrop1({ data }) {
-
+  //initial states for Drag and Drop functions
   const [list, setList] = useState(data);
   const [dragging, setDragging] = useState(false);
   const dragItem = useRef();
   const dragNode = useRef();
+
+  //initial state for popup button
+  const [buttonSolvedPopup, setButtonSolvedPopup] = useState(false);
+  //initial state for popup button
+  const [buttonRetryPopup, setButtonRetryPopup] = useState(false);
+
+  //initial state for score to allow score to be saved
+  const [score, setScore] = useState(true)
+
+  const saveScore = (gameScore) => {
+    let options = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(gameScore),
+    };
+    fetch("/server", options)
+      .then((response) => response.json())
+      //the response.json is converted into the "score" variable
+      .then((score) => {
+        //this is how the score is save, we set the values like this
+        setScore(score);
+        console.log("score saved");
+      })
+      .catch((err) => {
+        console.log("ERROR:", err.message);
+      });
+  };
+
 
 
   const handleDragStart = (e, params) => {
@@ -95,10 +124,12 @@ function DragNDrop1({ data }) {
       if (startPiecesArray[i] === rightPiecesOrder[i]) {
         //if both arrays have the same elements
         console.log("You did it!");
-        return true;
+        // triggers the popup for solved
+        return true && setButtonSolvedPopup(true)
       } else {
         console.log("Try again");
-        return false;
+        // triggers the popup for try again
+        return true && setButtonRetryPopup(true)
       }
     }
   };
@@ -117,7 +148,7 @@ function DragNDrop1({ data }) {
         //on progress table
         game_score:1
       });
-    }
+    } 
   };
 
 
@@ -217,11 +248,18 @@ function DragNDrop1({ data }) {
 
               <button
                 id="puzzle-button"
-                onClick={() => handleIsSolvedClick()}
+                onClick={() => handleIsSolvedClick()} 
                 className="lg-2 col background-warning"
               >
                 Done
               </button>
+              
+              {/* This triggers the popup,
+              you can check by using <Solved trigger={true}/>
+              Need variable to trigger it to true */}
+              <Solved trigger={buttonSolvedPopup} setTrigger={setButtonSolvedPopup} /> 
+
+              <TryAgain trigger={buttonRetryPopup} setTrigger={setButtonRetryPopup} />
 
           </div>
 
