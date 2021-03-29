@@ -11,27 +11,46 @@ import Redbike from "../CatImg/redbike.png";
 import Bike from "../CatImg/bike.png";
 import "./Categories2.css";
 
-const saveScore = (gameScore) => {
-  let options = {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(gameScore),
-  };
-  fetch("http://localhost:3000/server", options)
-    .then((response) => response.json())
-    .then((responseJson) => {
-      console.log("score saved");
-    })
-    .catch((err) => {
-      console.log("ERROR:", err.message);
-    });
-};
+// const saveScore = (gameScore) => {
+//   let options = {
+//     method: "POST",
+//     headers: { "Content-Type": "application/json" },
+//     body: JSON.stringify(gameScore),
+//   };
+//   fetch("http://localhost:3000/server", options)
+//     .then((response) => response.json())
+//     .then((responseJson) => {
+//       console.log("score saved");
+//     })
+//     .catch((err) => {
+//       console.log("ERROR:", err.message);
+//     });
+// };
 
 function Categories({ categoriesData }) {
   const [list, setList] = useState(categoriesData);
   const [dragging, setDragging] = useState(false);
   const dragItem = useRef();
   const dragNode = useRef();
+
+  const [score, setScore] = useState("")
+
+  const saveScore = (gameScore) => {
+    let options = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(gameScore),
+    };
+    fetch("/server", options)
+      .then((response) => response.json())
+      .then((score) => {
+        setScore(score);
+        console.log("score saved");
+      })
+      .catch((err) => {
+        console.log("ERROR:", err.message);
+      });
+  };
 
   const handleDragStart = (e, params) => {
     console.log("drag starting...", params);
@@ -113,7 +132,7 @@ function Categories({ categoriesData }) {
         game_lvl: 1,
         game_images: null,
         completed: 1,
-        game_score:0
+        game_score:1
       });
     }
   };
