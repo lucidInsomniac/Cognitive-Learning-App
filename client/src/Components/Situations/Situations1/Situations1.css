@@ -50,29 +50,32 @@
   /*to see where location is*/
   /* background: rgb(252, 14, 14);  */
 }
-
+  
 .situations-dnd-item:not(:last-of-type) {
   margin-bottom: 0.5rem;
 }
-
+  
 .situations-dnd-item * {
   margin: 0;
 }
-
+  
 p {
   align-self: center;
 }
-
+  
+  
 .category-card {
+    
   display: grid;
   gap: 0.5rem;
   /* width: 100%;
-    height: 100%; */
+  height: 100%; */
   grid-template-columns: repeat(auto-fill, 300px);
   border-radius: 5px;
 }
-
+  
 .category-card {
+    
   width: 150px;
   height: 150px;
 }
