@@ -1,6 +1,8 @@
 import React from "react";
 // import Route and Switch from react-router-dom
 import { Route, Switch } from "react-router-dom";
+//import WelcomePage component
+import WelcomePage from "../WelcomePage/WelcomePage";
 //import DashboardView
 import DashboardView from "../Header/DashboardView";
 
@@ -87,200 +89,186 @@ export default function Routes() {
   //based on the who the player is (player_id)
 
   return (
+    // Allows you to switch paths when clicked
+    <Switch>
+      <div className="Routes">
+        <header className="Routes-header">
+          <Route path="/profile">
+            {/* This brings us to the Profile Page, 
+                            but it doesn't affect the Sidebar links */}
+            <ProfileView />
+          </Route>
+          <Route path="/welcome" exact>
+            <WelcomePage />
+          </Route>
 
-      // Allows you to switch paths to matching components when clicked
-      <Switch>
+          <Route path="/" exact>
+            {/* This is the Component for Home */}
+            <DashboardView />
+          </Route>
 
-        <div className="Routes">
+          <Route path="/image_puzzle_list">
+            {/* This is the Component for Puzzle */}
+            <MainPuzzleView />
+          </Route>
 
-            <header className="Routes-header">
+          <Route path="/image_puzzle1">
+            {/* This is the Component for Puzzle */}
+            <ImagePuzzle1View />
+          </Route>
 
-                <Route path="/profile">
-                    {/* This brings us to the Profile Page, 
-                                    but it doesn't affect the Sidebar links */}
-                    <ProfileView />
-                </Route>
+          <Route path="/image_puzzle2">
+            {/* This is the Component for Puzzle */}
+            <ImagePuzzle2View />
+          </Route>
 
+          <Route path="/image_puzzle3">
+            {/* This is the Component for Puzzle */}
+            <ImagePuzzle3View />
+          </Route>
 
-                <Route path="/" exact>
-                    {/* This is the Component for Home */}
-                    <DashboardView />
-                </Route>
+          <Route path="/image_puzzle4">
+            {/* This is the Component for Puzzle */}
+            <ImagePuzzle4View />
+          </Route>
 
+          <Route path="/categories">
+            {/* This is the Component for Categories */}
+            <MainCategoriesView />
+          </Route>
 
-                <Route path="/image_puzzle_list">
-                    {/* This is the Component for Puzzle */}
-                    <MainPuzzleView />
-                </Route>
+          <Route path="/categories1">
+            {/* This is the Component for Categories */}
+            <Categories1View />
+          </Route>
 
-                    <Route path="/image_puzzle1">
-                        {/* This is the Component for Puzzle */}
-                        <ImagePuzzle1View />
-                    </Route>
+          <Route path="/categories2">
+            {/* This is the Component for Categories */}
+            <Categories2View />
+          </Route>
 
-                    <Route path="/image_puzzle2">
-                        {/* This is the Component for Puzzle */}
-                        <ImagePuzzle2View />
-                    </Route>
+          <Route path="/categories3">
+            {/* This is the Component for Categories */}
+            <Categories3View />
+          </Route>
 
-                    <Route path="/image_puzzle3">
-                        {/* This is the Component for Puzzle */}
-                        <ImagePuzzle3View />
-                    </Route>
+          <Route path="/categories4">
+            {/* This is the Component for Categories */}
+            <Categories4View />
+          </Route>
 
-                    <Route path="/image_puzzle4">
-                        {/* This is the Component for Puzzle */}
-                        <ImagePuzzle4View />
-                    </Route>
+          <Route path="/patterns">
+            {/* This is the Component for Patterns */}
+            <MainPatternsView />
+          </Route>
 
+          <Route path="/patterns1">
+            {/* This is the Component for Patterns 1 */}
+            <Patterns1View />
+          </Route>
 
-                <Route path="/categories">
-                      {/* This is the Component for Categories */}
-                      <MainCategoriesView />
-                </Route>
+          <Route path="/patterns2">
+            {/* This is the Component for Patterns 2 */}
+            <Patterns2View />
+          </Route>
 
-                    <Route path="/categories1">
-                        {/* This is the Component for Categories */}
-                        <Categories1View />
-                    </Route>
+          <Route path="/patterns3">
+            {/* This is the Component for Patterns 3 */}
+            <Patterns3View />
+          </Route>
 
-                    <Route path="/categories2">
-                        {/* This is the Component for Categories */}
-                        <Categories2View />
-                    </Route>
+          <Route path="/patterns4">
+            {/* This is the Component for Patterns 4 */}
+            <Patterns4View />
+          </Route>
 
-                    <Route path="/categories3">
-                        {/* This is the Component for Categories */}
-                        <Categories3View />
-                    </Route>
+          <Route path="/situations">
+            {/* This is the Component for MainSituationsView */}
+            <MainSituationsView />
+          </Route>
 
-                    <Route path="/categories4">
-                        {/* This is the Component for Categories */}
-                        <Categories4View />
-                    </Route>
+          <Route path="/situations1">
+            {/* This is the Component for Situations 1*/}
+            <Situations1View />
+          </Route>
 
+          <Route path="/situations2">
+            {/* This is the Component for Situations 2 */}
+            <Situations2View />
+          </Route>
 
-                <Route path="/patterns">
-                    {/* This is the Component for Patterns */}
-                    <MainPatternsView />
-                </Route>
+          <Route path="/situations3">
+            {/* This is the Component for Situations 3*/}
+            <Situations3View />
+          </Route>
 
-                    <Route path="/patterns1">
-                        {/* This is the Component for Patterns 1 */}
-                        <Patterns1View />
-                    </Route>
+          <Route path="/situations4">
+            {/* This is the Component for Situations 4*/}
+            <Situations4View />
+          </Route>
 
-                    <Route path="/patterns2">
-                        {/* This is the Component for Patterns 2 */}
-                        <Patterns2View />
-                    </Route>
+          <Route path="/mosaics">
+            {/* This is the Component for Mosaics  */}
+            <MainMosaicsView />
+          </Route>
 
-                    <Route path="/patterns3">
-                        {/* This is the Component for Patterns 3 */}
-                        <Patterns3View />
-                    </Route>
+          <Route path="/mosaics1">
+            {/* This is the Component for Mosaics  */}
+            <Mosaics1View />
+          </Route>
 
-                    <Route path="/patterns4">
-                        {/* This is the Component for Patterns 4 */}
-                        <Patterns4View />
-                    </Route>
+          <Route path="/mosaics2">
+            {/* This is the Component for Mosaics  */}
+            <Mosaics2View />
+          </Route>
 
+          <Route path="/mosaics3">
+            {/* This is the Component for Mosaics  */}
+            <Mosaics3View />
+          </Route>
 
-                <Route path="/situations">
-                    {/* This is the Component for MainSituationsView */}
-                    <MainSituationsView />
-                </Route>
+          <Route path="/mosaics4">
+            {/* This is the Component for Mosaics  */}
+            <Mosaics4View />
+          </Route>
 
-                    <Route path="/situations1">
-                        {/* This is the Component for Situations 1*/}
-                        <Situations1View />
-                    </Route>
+          <Route path="/analogies">
+            {/* This is the Component for Main Analogies */}
+            <MainAnalogiesView />
+          </Route>
 
-                    <Route path="/situations2">
-                        {/* This is the Component for Situations 2 */}
-                        <Situations2View />
-                    </Route>
+          <Route path="/analogies1">
+            {/* This is the Component for Main Analogies */}
+            <Analogies1View />
+          </Route>
 
-                    <Route path="/situations3">
-                        {/* This is the Component for Situations 3*/}
-                        <Situations3View />
-                    </Route>
+          <Route path="/analogies2">
+            {/* This is the Component for Main Analogies */}
+            <Analogies2View />
+          </Route>
 
-                    <Route path="/situations4">
-                        {/* This is the Component for Situations 4*/}
-                        <Situations4View />
-                    </Route>
+          <Route path="/analogies3">
+            {/* This is the Component for Main Analogies */}
+            <Analogies3View />
+          </Route>
 
+          <Route path="/analogies4">
+            {/* This is the Component for Main Analogies */}
+            <Analogies4View />
+          </Route>
 
-                <Route path="/mosaics">
-                    {/* This is the Component for Mosaics  */}
-                    <MainMosaicsView />
-                </Route>
+          {/*<Route path="asl_wordplay">
+                        This is the Component for ASL WordPlay */}
+          {/* <ASLWordPlay />
+                    </Route> */}
 
-                    <Route path="/mosaics1">
-                        {/* This is the Component for Mosaics  */}
-                        <Mosaics1View />
-                    </Route>
-
-                    <Route path="/mosaics2">
-                        {/* This is the Component for Mosaics  */}
-                        <Mosaics2View />
-                    </Route>
-
-                    <Route path="/mosaics3">
-                        {/* This is the Component for Mosaics  */}
-                        <Mosaics3View />
-                    </Route>
-
-                    <Route path="/mosaics4">
-                        {/* This is the Component for Mosaics  */}
-                        <Mosaics4View />
-                    </Route>
-
-
-                <Route path="/analogies">
-                    {/* This is the Component for Main Analogies */}
-                    <MainAnalogiesView />
-                </Route>
-
-                    <Route path="/analogies1">
-                        {/* This is the Component for Main Analogies */}
-                        <Analogies1View />
-                    </Route>
-
-                    <Route path="/analogies2">
-                        {/* This is the Component for Main Analogies */}
-                        <Analogies2View />
-                    </Route>
-
-                    <Route path="/analogies3">
-                        {/* This is the Component for Main Analogies */}
-                        <Analogies3View />
-                    </Route>
-
-                    <Route path="/analogies4">
-                        {/* This is the Component for Main Analogies */}
-                        <Analogies4View />
-                    </Route>
-
-
-                {/*<Route path="asl_wordplay">
-                              This is the Component for ASL WordPlay */}
-                {/* <ASLWordPlay />
-                          </Route> */}
-
-
-                <Route path="/resources">
-                    {/* This is the Component for Resources*/}
-                    <Resources />
-                </Route>
-
-            </header>
-
-        </div>
-
-      </Switch>
-
+          <Route path="/resources">
+            {/* This is the Component for Resources*/}
+            <Resources />
+          </Route>
+        </header>
+      </div>
+    </Switch>
   );
 
 }

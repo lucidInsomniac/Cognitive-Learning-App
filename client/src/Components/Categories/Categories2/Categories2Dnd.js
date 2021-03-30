@@ -163,15 +163,13 @@ function Categories({ categoriesData }) {
               }
               key={item}
               className={
-                dragging ? getStyles({ grpI, itemI }) : "categories-dnd-item"
+                dragging
+                  ? getStyles({ grpI, itemI })
+                  : "categories-dnd-item white-cards"
               }
             >
               {item === "1" && (
-                <img
-                  src={Taxi}
-                  alt="yellow taxi"
-                  className="category-card"
-                />
+                <img src={Taxi} alt="yellow taxi" className="category-card" />
               )}
               {item === "2" && (
                 <img src={Police} alt="police car" className="category-card" />
@@ -180,18 +178,26 @@ function Categories({ categoriesData }) {
                 <img
                   src={Ambul}
                   alt="ambulance car"
-                  className="category-card  duck-img"
+                  className="category-card"
                 />
               )}
               {item === "6" && (
-                <img src={Icecream} alt="icecream car" className="category-card" />
+                <img
+                  src={Icecream}
+                  alt="icecream car"
+                  className="category-card"
+                />
               )}
 
               {item === "7" && (
                 <img src={Redbike} alt="red bike" className="category-card" />
               )}
               {item === "8" && (
-                <img src={Bicycle} alt="green bicycle" className="category-card" />
+                <img
+                  src={Bicycle}
+                  alt="green bicycle"
+                  className="category-card"
+                />
               )}
               {item === "9" && (
                 <img src={Bus} alt="school bus" className="category-card" />
