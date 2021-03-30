@@ -10,6 +10,8 @@ import BlackOlivesTwo from "../SituationsImg/olives-2.jpg";
 import "./Situations1.css";
 import Solved from './dropCards/Solved'
 import TryAgain from './dropCards/TryAgain'
+import SituationsHint from '../SituationsHint'
+
 
 
 const saveScore = (gameScore) => {
@@ -263,6 +265,8 @@ export default function Situations1DnD({ situationsData }) {
                 >
                   Try Again
                 </button>
+
+                <SituationsHint className="situations-hint" id="situations-hint" />
 
                 <button
                   id="pizza"

@@ -7,6 +7,7 @@ import Piece5 from "../PuzzleImg/puzzle-5.png";
 import Cactus from "../PuzzleImg/the-cactus.png";
 import Solved from './dropCards/Solved'
 import TryAgain from './dropCards/TryAgain'
+import PuzzleHint from '../PuzzleHint'
 
 
 const saveScore = (gameScore) => {
@@ -223,6 +224,8 @@ function DragNDrop1({ data }) {
               >
                 Try Again
               </button>
+                            
+              <PuzzleHint className="puzzle-hint" id="puzzle-hint" />
 
               <button
                 id="puzzle-button"

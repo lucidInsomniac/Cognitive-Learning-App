@@ -1,0 +1,37 @@
+.MainPuzzleView{
+    width:100%;
+    height: 100%;
+}
+
+
+.puzz-header-container{
+    width: 100%;
+    margin-top: -30%;
+    margin-bottom: 40%;
+    /*used to check container*/
+     /* background: black;  */
+}
+
+/*This moves the container and button for Hint*/
+.puzzle-hint-containter-main{
+    background: rgb(248, 200, 136);
+    margin-top: 30%;
+    width: 15rem;
+    margin-left:50%;
+    box-shadow: 3px 3px 3px rgb(241, 127, 127);
+}
+
+.little-girl {
+    margin-left: 135%;
+    margin-top: -35%;
+    height: 20vh;
+    border:none;
+}
+
+.smiley-girl {
+    border: none;
+    height: 20vh;
+    margin-top: -30%;
+    margin-left: -15%;
+}
+
