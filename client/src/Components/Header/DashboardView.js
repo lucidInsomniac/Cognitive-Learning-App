@@ -1,11 +1,12 @@
-import React /*,{ useState }*/ from "react";
+// import React /*,{ useState }*/ from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./DashboardView.css";
 import Banner from "./HeaderImg/banner.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserAstronaut } from "@fortawesome/free-solid-svg-icons";
 import { faGrinBeam } from "@fortawesome/free-solid-svg-icons";
-import Weather from "../Weather/Weather";
+// import Weather from "../Weather/Weather";
 
 export default function DashboardView(props) {
   const [playerName, setPlayerName] = useState(
@@ -40,7 +41,7 @@ export default function DashboardView(props) {
       </div>
 
       <div className="DashboardView">
-        <Weather />
+        {/* <Weather /> */}
         <div className="icon-container">
           {/* This is the user icon */}
           <Link to="/profile">
@@ -54,7 +55,7 @@ export default function DashboardView(props) {
 
         {/* This is the header */}
         <h1>
-          Hi Daisie,
+          Hi {playerName},
           <FontAwesomeIcon icon={faGrinBeam} className="welcome" />
           Welcome Back!
         </h1>
