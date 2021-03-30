@@ -8,22 +8,25 @@ import ShrimpTwo from "../SituationsImg/shrimp-2.jpg";
 import BlackOlivesOne from "../SituationsImg/olives-1.jpg";
 import BlackOlivesTwo from "../SituationsImg/olives-2.jpg";
 import "./Situations1.css";
+import Solved from './dropCards/Solved'
+import TryAgain from './dropCards/TryAgain'
 
-// const saveScore = (gameScore) => {
-//   let options = {
-//     method: "POST",
-//     headers: { "Content-Type": "application/json" },
-//     body: JSON.stringify(gameScore),
-//   };
-//   fetch("http://localhost:3000/server", options)
-//     .then((response) => response.json())
-//     .then((responseJson) => {
-//       console.log("score saved");
-//     })
-//     .catch((err) => {
-//       console.log("ERROR:", err.message);
-//     });
-// };
+
+const saveScore = (gameScore) => {
+  let options = {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(gameScore),
+  };
+  fetch("http://localhost:3000/server", options)
+    .then((response) => response.json())
+    .then((responseJson) => {
+      console.log("score saved");
+    })
+    .catch((err) => {
+      console.log("ERROR:", err.message);
+    });
+};
 
 export default function Situations1DnD({ situationsData }) {
   const [list, setList] = useState(situationsData);
@@ -31,24 +34,11 @@ export default function Situations1DnD({ situationsData }) {
   const dragItem = useRef(); //useRef() stays constant between re renders
   const dragNode = useRef();
 
-  const [score, setScore] = useState("")
+  //initial state for popup button
+  const [buttonSolvedPopup, setButtonSolvedPopup] = useState(false);
+  //initial state for popup button
+  const [buttonRetryPopup, setButtonRetryPopup] = useState(false);
 
-  const saveScore = (gameScore) => {
-    let options = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(gameScore),
-    };
-    fetch("/server", options)
-      .then((response) => response.json())
-      .then((score) => {
-        setScore(score);
-        console.log("score saved");
-      })
-      .catch((err) => {
-        console.log("ERROR:", err.message);
-      });
-  };
 
   const handleDragStart = (e, params) => {
     console.log("drag starting...", params);
@@ -111,13 +101,14 @@ export default function Situations1DnD({ situationsData }) {
     }
     return "dnd-item";
   };
-
+  
+  const matchingIndexes = [];
   const isSolved = () => {
     const firstHalfPizzaArray = list[0].items;
     const secondHalfPizzaArray = list[1].items;
-
+    // eslint-disable-next-line
     let match = true;
-    const matchingIndexes = [];
+    
 
     for (let i = 0; i < firstHalfPizzaArray.length; i++) {
       if (firstHalfPizzaArray[i][0] !== secondHalfPizzaArray[i][0]) {
@@ -128,20 +119,22 @@ export default function Situations1DnD({ situationsData }) {
       } else {
         matchingIndexes.push(i);
       }
-    }
+    } /*************************************************Need to figure how to grab score from here and pass down as props*******************************/
     console.log(`You've got ${matchingIndexes.length} out of 4 correct!`);
     if (matchingIndexes.length > 0) {
       return {
         completed: true,
         gameScore: matchingIndexes.length,
+        buttonStatus: setButtonSolvedPopup(true)
       };
-    }
-    return {
-      completed: false,
-      gameScore: matchingIndexes.length,
-    };
+    } 
+      return {
+        completed: false,
+        gameScore: matchingIndexes.length,
+        buttonStatus: setButtonRetryPopup(true),
+      };
   };
-
+  
   const handleIsSolvedClick = () => {
     const gameName = "Situations 4";
     const gameResult = isSolved(); // assigning the result of the return of the function to a variable(an object containing a boolean and a number)
@@ -153,8 +146,10 @@ export default function Situations1DnD({ situationsData }) {
         game_images: null,
         completed: 1,
         game_score: gameResult.gameScore, //gameResult.gameScore is a number
+        
       });
     }
+    
   };
 
   const handleTryAgainClick = () => {
@@ -276,6 +271,13 @@ export default function Situations1DnD({ situationsData }) {
                 >
                   Done
                 </button>
+
+              {/* This triggers the popup,
+              you can check by using <Solved trigger={true}/>
+              Need variable to trigger it to true */}
+              <Solved trigger={buttonSolvedPopup} matchingIndexes={matchingIndexes.length} setTrigger={setButtonSolvedPopup} /> 
+
+              <TryAgain trigger={buttonRetryPopup} matchingIndexes={matchingIndexes.length} setTrigger={setButtonRetryPopup} />
 
             </div>
         </div>

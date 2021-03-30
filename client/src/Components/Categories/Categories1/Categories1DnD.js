@@ -8,22 +8,25 @@ import Tree from "../CatImg/tree.jpg";
 import Books from "../CatImg/books.jpg";
 import House from "../CatImg/house.jpg";
 import "./Categories1.css";
+import Solved from './dropCards/Solved'
+import TryAgain from './dropCards/TryAgain'
 
-// const saveScore = (gameScore) => {
-//   let options = {
-//     method: "POST",
-//     headers: { "Content-Type": "application/json" },
-//     body: JSON.stringify(gameScore),
-//   };
-//   fetch("http://localhost:3000/server", options)
-//     .then((response) => response.json())
-//     .then((responseJson) => {
-//       console.log("score saved");
-//     })
-//     .catch((err) => {
-//       console.log("ERROR:", err.message);
-//     });
-// };
+
+const saveScore = (gameScore) => {
+  let options = {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(gameScore),
+  };
+  fetch("/server", options)
+    .then((response) => response.json())
+    .then((responseJson) => {
+      console.log("score saved");
+    })
+    .catch((err) => {
+      console.log("ERROR:", err.message);
+    });
+};
 
 function Categories({ categoriesData }) {
   const [list, setList] = useState(categoriesData);
@@ -31,24 +34,10 @@ function Categories({ categoriesData }) {
   const dragItem = useRef();
   const dragNode = useRef();
 
-  const [score, setScore] = useState("")
-
-  const saveScore = (gameScore) => {
-    let options = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(gameScore),
-    };
-    fetch("/server", options)
-      .then((response) => response.json())
-      .then((score) => {
-        setScore(score);
-        console.log("score saved");
-      })
-      .catch((err) => {
-        console.log("ERROR:", err.message);
-      });
-  };
+  //initial state for popup button
+  const [buttonSolvedPopup, setButtonSolvedPopup] = useState(false);
+  //initial state for popup button
+  const [buttonRetryPopup, setButtonRetryPopup] = useState(false);
 
   const handleDragStart = (e, params) => {
     console.log("drag starting...", params);
@@ -114,10 +103,12 @@ function Categories({ categoriesData }) {
     for (let i = 0; i < rigthPiecesOrder.length; i++) {
       if (rigthPiecesOrder.includes("6") && rigthPiecesOrder.includes("9")) {
         console.log("You did it!");
-        return true;
+        //triggers the popup for solved
+        return [true, setButtonSolvedPopup(true)]
       } else {
-        console.log("Oops! Try again!");
-        return false;
+        console.log("Try again");
+        // triggers the popup for try again
+        return [true, setButtonRetryPopup(true)]
       }
     }
   };
@@ -258,6 +249,14 @@ function Categories({ categoriesData }) {
                 >
                   Done
                 </button>
+
+                {/* This triggers the popup,
+                  you can check by using <Solved trigger={true}/>
+                  Need variable to trigger it to true */}
+                <Solved trigger={buttonSolvedPopup} setTrigger={setButtonSolvedPopup} /> 
+
+                <TryAgain trigger={buttonRetryPopup} setTrigger={setButtonRetryPopup} />
+
             </div>
       </div>
   );
