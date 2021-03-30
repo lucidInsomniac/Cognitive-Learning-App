@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react"; //useRef it stays constant between re renders
+import React, { useState, useEffect, useRef } from "react"; //useRef it stays constant between re renders
 import HawaiiOne from "../SituationsImg/hawaii-1.jpg";
 import HawaiiTwo from "../SituationsImg/hawaii-2.jpg";
 import VeggieOne from "../SituationsImg/veggies-1.jpg";
@@ -40,6 +40,36 @@ export default function Situations1DnD({ situationsData }) {
   const [buttonSolvedPopup, setButtonSolvedPopup] = useState(false);
   //initial state for popup button
   const [buttonRetryPopup, setButtonRetryPopup] = useState(false);
+
+   //state for games data to be fetched
+   const [games, setGames] = useState([]);
+
+   //put useEffect to pull data for player here
+   useEffect(() => {
+    //this connects to the server.js routes
+    fetch("/server")
+    //our promise for fetch with a request
+    .then(response => response.json())
+    //this is the response returned with actual data
+    .then(games => {
+        console.log(games);
+        //upon success, update games
+        setGames(games);
+        //check games variable has value in console log
+        console.log( 'Dashboard Avatar', games)
+    })
+    //catch any errors
+    .catch(err => {
+        //upon failure, show error message
+        console.log("ERROR:", err.message);
+    });
+    //gets saved into an empty state as new array
+}, []); 
+
+
+
+  //check array values for game to extract game_score
+  // console.log("games array check", games[0].game_score)
 
 
   const handleDragStart = (e, params) => {
@@ -279,7 +309,7 @@ export default function Situations1DnD({ situationsData }) {
               {/* This triggers the popup,
               you can check by using <Solved trigger={true}/>
               Need variable to trigger it to true */}
-              <Solved trigger={buttonSolvedPopup} matchingIndexes={matchingIndexes.length} setTrigger={setButtonSolvedPopup} /> 
+              <Solved trigger={buttonSolvedPopup} games={games} matchingIndexes={matchingIndexes.length} setTrigger={setButtonSolvedPopup} /> 
 
               <TryAgain trigger={buttonRetryPopup} matchingIndexes={matchingIndexes.length} setTrigger={setButtonRetryPopup} />
 
