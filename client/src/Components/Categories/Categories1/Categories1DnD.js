@@ -10,6 +10,7 @@ import House from "../CatImg/house.jpg";
 import "./Categories1.css";
 import Solved from './dropCards/Solved'
 import TryAgain from './dropCards/TryAgain'
+import CategoriesHint from '../CategoriesHint'
 
 
 const saveScore = (gameScore) => {
@@ -242,6 +243,8 @@ function Categories({ categoriesData }) {
                   Try Again
                 </button>
                 
+                <CategoriesHint className="categories-hint" id="categories-hint" />
+
                 <button
                   id="categories"
                   onClick={() => handleIsSolvedClick()}

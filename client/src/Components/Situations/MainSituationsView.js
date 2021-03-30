@@ -1,86 +1,30 @@
 import React from 'react'
+import SituationsHint from './SituationsHint'
+import SillyBear from '../PageImages/SillyBear.png'
+import Donut from '../PageImages/Donut.png'
+import './MainSituationsView.css'
 
 export default function MainSituationsView () {
 
     return (
 
         <div className="MainSituationsView">
-            <div className="puzz-header-container">
+            <div className="situations-header-container">
                 <h1>This is the Main Situations Page</h1> 
             </div>
 
-            <div className="row flex-spaces child-borders">
-                <label 
-                    className="paper-btn margin" 
-                    htmlFor="modal-1"
-                >
-                    Click Here to Start!
-                </label>
-             </div>
-
-             <input 
-                className="modal-state" 
-                id="modal-1" 
-                type="checkbox" 
-            />
-
-            <div className="modal">
-                <label 
-                className="modal-bg" 
-                htmlFor="modal-1"
-                >
-                </label>
-
-                <div className="modal-body">
-                    <label 
-                        className="btn-close" 
-                        htmlFor="modal-1"
-                    >
-                        X
-                    </label>
-
-                        <h4 className="modal-title">
-                            Instructions to Situations
-                        </h4>
-
-                            <h5 className="modal-subtitle">
-                                How to solve:
-                            </h5>
-
-                                <p className="modal-text">
-                                    {/* 1. Drag 1 puzzle piece from Group 1, 
-                                    and drop it from the top, and into Group 2. Fill Group 2 with 
-                                    the puzzle pieces until there are no more pieces. */}
-                                </p>
-
-                                <p className="modal-text">
-                                    {/* 2. The puzzle pieces in Group 2 must 
-                                    look like the picture on the right hand side. You can drag and drop
-                                    the pieces inside Group 2 into the correct order, up and down inside Group 2. */}
-                                </p>
-
-                                <p className="modal-text">
-                                    {/* 3. When you are done, click on the yellow button 
-                                    called "Done", located on the bottom right. */}
-                                </p>
-
-                                <p className="modal-text">
-                                    {/* 4. If you need to try again, click on the yellow 
-                                    button called "Try Again", located on top of the "Done" button. */}
-                                </p>
-
-                                <p className="modal-text">Good luck!</p>
-
-                    <label 
-                        className="paper-btn margin" 
-                        htmlFor="modal-1"
-                    >
-                        Ready? Let's Go!
-                    </label>
-
-                </div>
+            <div className="situations-hint-container-main">
+                <SituationsHint className="main-situations-hint" />
             </div>
 
+            <div className="situations-img">
+                <img src={SillyBear} alt="Silly Bear thing smiling" className="silly-bear" />
+            </div>
+
+            <div className="situations2-img">
+                <img src={Donut} alt="Giant Frosted Sprinkled Donut" className="donut" />
+            </div>
+           
         </div>
     ) 
 }

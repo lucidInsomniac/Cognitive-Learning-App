@@ -1,6 +1,7 @@
 .Categories {
   text-align: center;
   width: 100%;
+  height: 100%;
 }
 
 .categories-drag-n-drop {
@@ -101,4 +102,11 @@ button#categories{
   padding-top: 15%;
   padding-bottom: 15%;
  
+}
+
+
+ div#categories-hint {
+  display: flex;
+  margin-bottom: 60%;
+  margin-top: -25%;
 }

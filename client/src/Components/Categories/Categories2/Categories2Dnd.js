@@ -12,6 +12,7 @@ import Bike from "../CatImg/bike.png";
 import "./Categories2.css";
 import Solved from './dropCards/Solved'
 import TryAgain from './dropCards/TryAgain'
+import CategoriesHint from '../CategoriesHint'
 
 const saveScore = (gameScore) => {
   let options = {
@@ -210,6 +211,9 @@ function Categories({ categoriesData }) {
         >
           Try Again
         </button>
+
+        <CategoriesHint className="categories-hint" id="categories-hint" />
+
         <button
           id="categories"
           onClick={() => handleIsSolvedClick()}
