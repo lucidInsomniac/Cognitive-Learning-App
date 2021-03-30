@@ -1,6 +1,8 @@
 import React from "react";
 // import Route and Switch from react-router-dom
 import { Route, Switch } from "react-router-dom";
+//import WelcomePage component
+import WelcomePage from "../WelcomePage/WelcomePage";
 //import DashboardView
 import DashboardView from "../Header/DashboardView";
 //import the MainPuzzleView component
@@ -83,6 +85,9 @@ export default function Routes({ games }) {
             {/* This brings us to the Profile Page, 
                             but it doesn't affect the Sidebar links */}
             <ProfileView />
+          </Route>
+          <Route path="/welcome" exact>
+            <WelcomePage />
           </Route>
 
           <Route path="/" exact>

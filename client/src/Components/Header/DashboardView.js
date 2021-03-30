@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import UseLocalStorage from "../AddPlayer/AddPlayer";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./DashboardView.css";
 import Banner from "./HeaderImg/banner.jpg";
@@ -7,7 +6,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserAstronaut } from "@fortawesome/free-solid-svg-icons";
 import { faGrinBeam } from "@fortawesome/free-solid-svg-icons";
 
-export default function DashboardView() {
+export default function DashboardView(props) {
+  const [playerName, setPlayerName] = useState(
+    localStorage.getItem("Name") || ""
+  );
+
+  useEffect(() => {
+    console.log(localStorage.getItem("valueInPlayerName"));
+    localStorage.setItem("Name", playerName);
+  }, [playerName]);
+
   //event handler to handle the "onClick" event
   function handleClick(e) {
     //check click
@@ -19,7 +27,6 @@ export default function DashboardView() {
 
   return (
     <div className="DashboardView">
-      <UseLocalStorage />
       <div className="icon-container">
         {/* This is the user icon */}
         <Link to="/profile">
@@ -33,7 +40,7 @@ export default function DashboardView() {
 
       {/* This is the header */}
       <h1>
-        Hi Daisie,
+        Hi {playerName},
         <FontAwesomeIcon icon={faGrinBeam} className="welcome" />
         Welcome Back!
       </h1>

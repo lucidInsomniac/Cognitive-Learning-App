@@ -1,16 +1,16 @@
 import "../AddPlayer/AddPlayer.css";
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 
 function AddPlayer(props) {
   const [playerName, setPlayerName] = useState(
     localStorage.getItem("Name") || ""
   );
-  // const [playerAge, setPlayerAge] = useState(0);
 
+  const history = useHistory();
   const savePlayer = () => {
     const newPlayer = {
       name: playerName,
-      // age: playerAge,
     };
   };
 
@@ -21,10 +21,6 @@ function AddPlayer(props) {
 
   const handleInputChange = (event) => {
     setPlayerName(event.target.value);
-
-    // if (localStorage.setItem("playerAge", event.target.value)) {
-    //   setPlayerAge(event.target.value);
-    // }
   };
 
   const handleSubmit = (event) => {
@@ -32,7 +28,10 @@ function AddPlayer(props) {
 
     savePlayer();
     setPlayerName("");
-    // setPlayerAge("");
+  };
+
+  const handleClick = () => {
+    history.push("/");
   };
 
   return (
@@ -41,32 +40,24 @@ function AddPlayer(props) {
         <div>
           <form className="form-grid" onSubmit={handleSubmit}>
             <div className="player-name">
-              <label>
-                Name
-                <input
-                  name="playerName"
-                  value={playerName}
-                  type="text"
-                  onChange={handleInputChange}
-                  required
-                />
-              </label>
-              <p>{playerName}</p>
+              <div className="input-name">
+                <h1>Welcome {playerName} :)</h1>
+              </div>
+              <div className="input-field">
+                <label>
+                  <input
+                    name="playerName"
+                    value={playerName}
+                    type="text"
+                    onChange={handleInputChange}
+                    placeholder="name"
+                    required
+                  />
+                </label>
+              </div>
             </div>
-            {/* <div className="player-age">
-              <label>
-                Age
-                <input
-                  name="playerAge"
-                  value={playerAge}
-                  type="text"
-                  onChange={handleInputChange}
-                  required
-                />
-              </label>
-              <p>{playerAge}</p>
-            </div> */}
           </form>
+          <button onClick={handleClick}>Let's play!</button>
         </div>
       </div>
     </div>
