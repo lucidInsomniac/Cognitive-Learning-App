@@ -5,7 +5,7 @@ import Banner from "./HeaderImg/banner.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserAstronaut } from "@fortawesome/free-solid-svg-icons";
 import { faGrinBeam } from "@fortawesome/free-solid-svg-icons";
-// import Weather from "../Weather/Weather";
+import Weather from '../Weather/weather'
 
 export default function DashboardView() {
   // eslint-disable-next-line
@@ -39,6 +39,10 @@ export default function DashboardView() {
                         className="avatar"
                     />
                 </Link>
+            </div>
+
+            <div className="weather">
+               <Weather />
             </div>
 
                 {/* This is the header */}
