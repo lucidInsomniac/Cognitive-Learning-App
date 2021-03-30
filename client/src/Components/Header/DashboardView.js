@@ -5,6 +5,7 @@ import Banner from './HeaderImg/banner.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserAstronaut } from '@fortawesome/free-solid-svg-icons'
 import { faGrinBeam } from '@fortawesome/free-solid-svg-icons'
+import Weather from '../Weather/Weather'
 
 
 export default function DashboardView () {
@@ -22,6 +23,7 @@ export default function DashboardView () {
     return (
 
         <div className="DashboardView">
+            <Weather /> 
             <div className="icon-container">
                 {/* This is the user icon */}
                 <Link to="/profile" >
@@ -52,8 +54,9 @@ export default function DashboardView () {
                     // event listener triggers event handler 
                     onClick={(e) => handleClick(e)}
                 />
-            </diiv>
+            </diiv> 
         </div>
 
     )
 }
+
