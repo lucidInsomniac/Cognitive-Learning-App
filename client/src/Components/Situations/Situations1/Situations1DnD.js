@@ -180,9 +180,12 @@ export default function Situations1DnD({ situationsData }) {
         game_score: gameResult.gameScore, //gameResult.gameScore is a number
         
       });
+      console.log("gameScore to extract", gameResult.gameScore)
     }
     
   };
+
+  
 
   const handleTryAgainClick = () => {
     const shuffledPieces = [...situationsData[1].items].sort(
