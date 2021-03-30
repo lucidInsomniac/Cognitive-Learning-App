@@ -36,6 +36,9 @@ export default function Situations1DnD({ situationsData }) {
   const dragItem = useRef(); //useRef() stays constant between re renders
   const dragNode = useRef();
 
+  //initial state for score
+  const [currentScore, setCurrentScore] = useState(0);
+
   //initial state for popup button
   const [buttonSolvedPopup, setButtonSolvedPopup] = useState(false);
   //initial state for popup button
@@ -157,13 +160,15 @@ export default function Situations1DnD({ situationsData }) {
       return {
         completed: true,
         gameScore: matchingIndexes.length,
-        buttonStatus: setButtonSolvedPopup(true)
+        buttonStatus: setButtonSolvedPopup(true),
+        currentScore: setCurrentScore(matchingIndexes.length)
       };
     } 
       return {
         completed: false,
         gameScore: matchingIndexes.length,
         buttonStatus: setButtonRetryPopup(true),
+        currentScore: setCurrentScore(matchingIndexes.length)
       };
   };
   
@@ -312,7 +317,7 @@ export default function Situations1DnD({ situationsData }) {
               {/* This triggers the popup,
               you can check by using <Solved trigger={true}/>
               Need variable to trigger it to true */}
-              <Solved trigger={buttonSolvedPopup} games={games} matchingIndexes={matchingIndexes.length} setTrigger={setButtonSolvedPopup} /> 
+              <Solved trigger={buttonSolvedPopup} games={games} currentScore={currentScore} matchingIndexes={matchingIndexes.length} setTrigger={setButtonSolvedPopup} /> 
 
               <TryAgain trigger={buttonRetryPopup} matchingIndexes={matchingIndexes.length} setTrigger={setButtonRetryPopup} />
 
