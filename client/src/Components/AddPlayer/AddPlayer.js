@@ -2,13 +2,14 @@ import "../AddPlayer/AddPlayer.css";
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
-function AddPlayer(props) {
+function AddPlayer() {
   const [playerName, setPlayerName] = useState(
     localStorage.getItem("Name") || ""
   );
 
   const history = useHistory();
   const savePlayer = () => {
+    // eslint-disable-next-line
     const newPlayer = {
       name: playerName,
     };
@@ -31,7 +32,7 @@ function AddPlayer(props) {
   };
 
   const handleClick = () => {
-    history.push("/");
+    history.push("/home");
   };
 
   return (

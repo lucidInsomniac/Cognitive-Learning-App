@@ -1,13 +1,14 @@
-import React /*,{ useState }*/ from "react";
+import React, { useState,useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./DashboardView.css";
 import Banner from "./HeaderImg/banner.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserAstronaut } from "@fortawesome/free-solid-svg-icons";
 import { faGrinBeam } from "@fortawesome/free-solid-svg-icons";
-import Weather from "../Weather/Weather";
+// import Weather from "../Weather/Weather";
 
-export default function DashboardView(props) {
+export default function DashboardView() {
+  // eslint-disable-next-line
   const [playerName, setPlayerName] = useState(
     localStorage.getItem("Name") || ""
   );
@@ -27,17 +28,6 @@ export default function DashboardView(props) {
   }
 
   return (
-    <div className="DashboardView">
-      <div className="icon-container">
-        {/* This is the user icon */}
-        <Link to="/profile">
-          <FontAwesomeIcon
-            icon={faUserAstronaut}
-            size="3x"
-            className="avatar"
-          />
-        </Link>
-      </div>
 
         <div className="DashboardView">
             <div className="icon-container">
@@ -52,13 +42,11 @@ export default function DashboardView(props) {
             </div>
 
                 {/* This is the header */}
-               <h1>Hi Daisie, 
-                    <FontAwesomeIcon 
-                        icon={faGrinBeam} 
-                        className="welcome"
-                    /> 
-                    Welcome Back!
-                </h1>
+            <h1>
+              Hi {playerName},
+              <FontAwesomeIcon icon={faGrinBeam} className="welcome" />
+              Welcome Back!
+            </h1>
             
             {/* This is the image in Dashboard */}
             <diiv className="banner-container">
@@ -72,26 +60,6 @@ export default function DashboardView(props) {
                 />
             </diiv>
         </div>
-
-        {/* This is the header */}
-        <h1>
-          Hi Daisie,
-          <FontAwesomeIcon icon={faGrinBeam} className="welcome" />
-          Welcome Back!
-        </h1>
-
-        {/* This is the image in Dashboard */}
-        <diiv className="banner-container">
-          <img
-            src={Banner}
-            alt="child draws rocket"
-            id="banner"
-            classname="banner"
-            // event listener triggers event handler
-            onClick={(e) => handleClick(e)}
-          />
-        </diiv>
-    </div>
     
   );
 }

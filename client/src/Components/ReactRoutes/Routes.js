@@ -98,11 +98,12 @@ export default function Routes() {
                             but it doesn't affect the Sidebar links */}
             <ProfileView />
           </Route>
-          <Route path="/welcome" exact>
+
+          <Route path="/" exact>
             <WelcomePage />
           </Route>
 
-          <Route path="/" exact>
+          <Route path="/home" exact>
             {/* This is the Component for Home */}
             <DashboardView />
           </Route>
