@@ -2,7 +2,7 @@ import React from 'react'
 import './Solved.css'
 
 export default function Solved (props) {
-    console.log("check props", props.games[0].game_score)
+    // console.log("check props", props.games[0].game_score)
 
 
     return (props.trigger) ? (

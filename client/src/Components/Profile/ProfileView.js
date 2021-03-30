@@ -14,6 +14,15 @@ export default function ProfileView () {
     //state for games data to be fetched
     const [games, setGames] = useState([]);
     
+    // eslint-disable-next-line
+    const [playerName, setPlayerName] = useState(
+        localStorage.getItem("Name") || ""
+      );
+    
+      useEffect(() => {
+        console.log(localStorage.getItem("valueInPlayerName"));
+        localStorage.setItem("Name", playerName);
+      }, [playerName]);
 
     //put useEffect to pull data for player here
     useEffect(() => {
@@ -71,7 +80,7 @@ export default function ProfileView () {
         <div className="ProfileView">
 
             <div className="profile-header-container">
-                <h1>Daisie's Journey 
+                <h1>{playerName}'s Journey 
                     <FontAwesomeIcon 
                         icon={faHiking} 
                         className="profile-header" 
