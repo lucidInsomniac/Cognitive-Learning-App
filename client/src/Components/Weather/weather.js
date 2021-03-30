@@ -1,12 +1,8 @@
 import React from 'react';
 import { useState,useEffect} from 'react';
-import './Weather.css';
-/*const api = {
-  key:"9ee30c3d4c072a847cde3cc1d93817b5",
-  base:'https://api.openweathermap.org/data/2.5/'
- }*/
-//import {REACT_APP_WEATHER_API_URL, REACT_APP_WEATHER_API_KEY} from "../../s@env";
- import {API_KEY, URL} from './cloud'
+import './weather.css';
+
+import {API_KEY, URL} from './cloud'
 
 function Weather () {
 
