@@ -90,7 +90,7 @@ export default function Routes() {
 
   return (
     // Allows you to switch paths when clicked
-    <Switch>
+  <Switch>
       <div className="Routes">
         <header className="Routes-header">
           <Route path="/profile">
