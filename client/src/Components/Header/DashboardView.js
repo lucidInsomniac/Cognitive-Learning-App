@@ -41,7 +41,7 @@ export default function DashboardView() {
       </div>
 
       <div className="weather">
-        <Weather />
+        <Weather className="weather" />
       </div>
 
       {/* This is the header */}

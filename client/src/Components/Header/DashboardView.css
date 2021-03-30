@@ -1,24 +1,21 @@
 /* This is used to check for container space */
-.icon-container{
+.icon-container {
   background: black;
   width: 0%;
   margin-left: 92.5%;
-  margin-top:-2%;
+  margin-top: -2%;
 }
-
 
 .DashboardView {
   margin-bottom: 40%;
 }
 
 .avatar {
-background:rgb(230, 231, 156);
-border-radius: 35%;
-color:rgb(207, 137, 111);
-box-shadow: 2px 2px 2px darkblue;
-
+  background: rgb(230, 231, 156);
+  border-radius: 35%;
+  color: rgb(207, 137, 111);
+  box-shadow: 2px 2px 2px darkblue;
 }
-
 
 img#banner {
   width: 50%;
@@ -30,17 +27,17 @@ img#banner {
 }
 
 h1 {
-    display:flex;
-    align-content:space-between;
-    text-align: center;
-    margin-left: 40%;
-    margin-top: -3%;
-    text-shadow: 4px 4px 4px lightslategray;
+  display: flex;
+  align-content: space-between;
+  text-align: center;
+  margin-left: 40%;
+  margin-top: -3%;
+  text-shadow: 4px 4px 4px lightslategray;
 }
 
 .welcome {
-    margin-right: 2%;
-    margin-left: 2%;
+  margin-right: 2%;
+  margin-left: 2%;
 }
 
 th#thead {
@@ -55,4 +52,12 @@ table {
 
 .total-score-container {
   text-shadow: 4px 4px 4px lightslategray;
+}
+
+.location-box {
+  margin-left: -55%;
+}
+
+.weather-box {
+  margin-left: -55%;
 }
