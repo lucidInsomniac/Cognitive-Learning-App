@@ -5,7 +5,7 @@ import DragNDrop4 from "./DragNDrop4";
 const data = [
   {
     title: "Group 1",
-    items: ["1", "2", "3", "4", "5"],
+    items: ["2", "1", "3", "5", "4"], // here we shuffle the puzzle from the start of the game
   },
 
   {
