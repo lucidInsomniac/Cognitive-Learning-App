@@ -33,13 +33,16 @@
 }
 
 .situations-group-title {
-  margin-bottom: 0.5rem;
-}
-
+  
+    margin-bottom: 0.5rem;
+  }
+  
 .situations-dnd-item {
+    
   display: grid;
   align-items: center;
   min-height: 150px;
+  background-color: #efefef;
   color: #282c34;
   border-radius: 5px;
   font-weight: bold;
@@ -131,5 +134,9 @@ button#pizza {
 div#situations-hint {
   display: flex;
   margin-bottom: 60%;
-  margin-top: -25%;
+  margin-top: 45%;
+  /* background:black; */
+  margin-left: -30%;
+  margin-right: 20%;
 }
+
