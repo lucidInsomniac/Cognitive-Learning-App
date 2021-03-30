@@ -10,6 +10,7 @@ router.get("/users", async (req, res) => {
       console.log("RESULTS", results);
       //send back the full list of users with status
       res.status(200).send(results.data); 
+      res.set("Connection", "close");
       } else { 
       res.status(404).send({ error: "Db is inaccesible or empty." });
       }
@@ -35,6 +36,7 @@ try {
   let results = await db(sql);
   //send back the user by id with status
   res.send(results.data[0]);
+  res.set("Connection", "close");
    //Catch any errors
 } catch (err) {
   res.status(500).send({ error: err.message });
@@ -66,6 +68,7 @@ try {
 //     //you should send back the full list of for player
 //     //console.log(results.data);
 //     res.status(201).send(results.data);
+//     res.set("Connection", "close");
 //    } catch (err) {
 //   }
 

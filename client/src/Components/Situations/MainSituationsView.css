@@ -1,0 +1,34 @@
+.MainSituationsView {
+    width: 100%;
+    height: 100%;
+}
+
+.situations-header-container{
+    margin-top: 15%;
+    /*used to check container*/
+     /* background: black;  */
+}
+
+/*This moves the container and button for Hint*/
+.situations-hint-container-main{
+    background: rgb(248, 200, 136);
+    margin-top: 20%;
+    width: 15rem;
+    margin-left:53%;
+    box-shadow: 3px 3px 3px rgb(241, 127, 127);
+}
+
+.silly-bear {
+    border: none;
+    height: 60vh;
+    margin-top: -30%;
+    margin-left: -18%;
+}
+
+.donut{
+    border:none;
+    height: 40vh;
+    margin-left: 110%;
+    margin-top: -50%;
+  
+}

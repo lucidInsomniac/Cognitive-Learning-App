@@ -1,15 +1,22 @@
 .ProfileView{
     text-align: center;
     width: 80vw;
+    height:100%;
+    
 }
 
 .profile-header{
     margin-left:3%;
+    height:100%;
 }
 
 .profile-header-container{
     width: 100%;
     margin-left: 6%;
+    /* This keeps the header in place 
+    while table expands */
+    margin-top: 8%;
+  
 }
 
 .avatar-on-profile {

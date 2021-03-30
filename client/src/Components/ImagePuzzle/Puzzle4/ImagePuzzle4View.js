@@ -1,3 +1,4 @@
+import React from 'react'
 import "./ImagePuzzle4.css";
 import DragNDrop4 from "./DragNDrop4";
 
@@ -14,13 +15,19 @@ const data = [
 ];
 
 function ImagePuzzle4View() {
-  return (
-    <div className="ImagePuzzle4View">
-      <header className="ImagePuzzleView1-header">
-        <DragNDrop4 data={data} />
-      </header>
-    </div>
-  );
-}
+
+    return (
+
+        <div className="ImagePuzzle4View">
+
+            <header className="ImagePuzzleView1-header">
+              <DragNDrop4 data={data} />
+            </header>
+
+        </div>
+
+    );
+
+};
 
 export default ImagePuzzle4View;

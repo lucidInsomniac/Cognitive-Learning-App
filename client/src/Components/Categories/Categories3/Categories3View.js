@@ -7,5 +7,7 @@ export default function Categories3View () {
         <div className="Categories3View">
             <header>This is for Categories 3</header>
         </div>
+
     ) 
+    
 }

@@ -7,5 +7,7 @@ export default function Categories4View () {
         <div className="Categories4View">
             <header>This is for Categories 4</header>
         </div>
+
     ) 
+    
 }

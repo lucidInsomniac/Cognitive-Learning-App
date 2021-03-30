@@ -1,44 +1,33 @@
 import React from 'react'
+import PuzzleHint from './PuzzleHint'
+import './MainPuzzleView.css'
+import LittleGirl from '../PageImages/LittleGirl.png'
+import SmileyGirl from '../PageImages/SmileyGirl.png'
+
 
 export default function MainPuzzleView () {
 
     return (
 
         <div className="MainPuzzleView">
+
             <div className="puzz-header-container">
                 <h1>This is the Main Puzzle Page</h1> 
             </div>
 
-            <div className="row flex-spaces child-borders">
-                <label className="paper-btn margin" htmlFor="modal-1">Click Here to Start!</label>
+            <div className="puzzle-hint-containter-main">
+                <PuzzleHint className="main-puzzle-hint" id="main-puzzle-hint"/>
             </div>
 
-            <input className="modal-state" id="modal-1" type="checkbox" />
-
-            <div className="modal">
-                <label className="modal-bg" htmlFor="modal-1"></label>
-                <div className="modal-body">
-                    <label className="btn-close" htmlFor="modal-1">X</label>
-                        <h4 className="modal-title">Instructions to Puzzles</h4>
-                        <h5 className="modal-subtitle">How to solve:</h5>
-                        <p className="modal-text">1. Drag 1 puzzle piece from Group 1, 
-                            and drop it from the top, and into Group 2. Fill Group 2 with 
-                            the puzzle pieces until there are no more pieces.
-                        </p>
-                        <p className="modal-text">2. The puzzle pieces in Group 2 must 
-                            look like the picture on the right hand side. You can drag and drop
-                            the pieces inside Group 2 into the correct order, up and down inside Group 2.
-                        </p>
-                        <p className="modal-text">3. When you are done, click on the yellow button 
-                            called "Done", located on the bottom right.
-                        </p>
-                        <p className="modal-text">4. If you need to try again, click on the yellow 
-                            button called "Try Again", located on top of the "Done" button.
-                        </p>
-                        <p className="modal-text">Good luck!</p>
-                    <label className="paper-btn margin" htmlFor="modal-1">Ready? Let's Go!</label>
-                </div>
+            <div className="puzzle-img">
+                <img src={LittleGirl} alt="Little Girl Pointing Up" className="little-girl" />
             </div>
+
+            <div className="puzzle-img2">
+                <img src={SmileyGirl} alt="Little Girl Smiling" className="smiley-girl" />
+            </div>
+
+
         </div>
     ) 
 }

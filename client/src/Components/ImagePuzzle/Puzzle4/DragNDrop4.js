@@ -5,6 +5,10 @@ import Piece3 from "../PuzzleImg/puzzle-3.png";
 import Piece4 from "../PuzzleImg/puzzle-4.png";
 import Piece5 from "../PuzzleImg/puzzle-5.png";
 import Cactus from "../PuzzleImg/the-cactus.png";
+import Solved from './dropCards/Solved'
+import TryAgain from './dropCards/TryAgain'
+import PuzzleHint from '../PuzzleHint'
+
 
 const saveScore = (gameScore) => {
   let options = {
@@ -22,11 +26,19 @@ const saveScore = (gameScore) => {
     });
 };
 
+
+
 function DragNDrop1({ data }) {
   const [list, setList] = useState(data);
   const [dragging, setDragging] = useState(false);
   const dragItem = useRef();
   const dragNode = useRef();
+  
+  //initial state for popup button
+  const [buttonSolvedPopup, setButtonSolvedPopup] = useState(false);
+  //initial state for popup button
+  const [buttonRetryPopup, setButtonRetryPopup] = useState(false);
+
 
   const handleDragStart = (e, params) => {
     console.log("drag starting...", params);
@@ -38,6 +50,7 @@ function DragNDrop1({ data }) {
       setDragging(true);
     }, 0);
   };
+
 
   const handleDragEnter = (e, params) => {
     console.log("Entering drag ...", params);
@@ -58,6 +71,7 @@ function DragNDrop1({ data }) {
     }
   };
 
+
   const handleDragEnd = () => {
     console.log("Ending drag...");
     setDragging(false);
@@ -65,6 +79,7 @@ function DragNDrop1({ data }) {
     dragItem.current = null;
     dragNode.current = null;
   };
+
 
   const getStyles = (params) => {
     const currentItem = dragItem.current;
@@ -77,6 +92,7 @@ function DragNDrop1({ data }) {
     return "dnd-item";
   };
 
+
   const isSolved = () => {
     const startPiecesArray = ["1", "2", "3", "4", "5"]; //original array to be compared to
     const rightPiecesOrder = list[1].items; //it starts as an empty array and when the puzzle is done we have to compare it to the original array
@@ -87,121 +103,151 @@ function DragNDrop1({ data }) {
       if (startPiecesArray[i] === rightPiecesOrder[i]) {
         //if both arrays have the same elements
         console.log("You did it!");
-        return true;
+        // triggers the popup for solved
+        return [true, setButtonSolvedPopup(true)]
       } else {
         console.log("Try again");
-        return false;
+        // triggers the popup for try again
+        return [true, setButtonRetryPopup(true)]
       }
     }
   };
 
+
   const handleIsSolvedClick = () => {
-    const gameName = "Image Puzzle 4";
+    const gameName = "Puzzle 4";
     if (isSolved()) {
       saveScore({
         game_name: gameName,
         game_lvl: 4,
         game_images: null,
         completed: 1,
-        game_score: 0,
+        //1 point for each puzzle
+        //to allow game_score to add properly 
+        //on progress table
+        game_score:1
       });
-    }
+    } 
   };
+
 
   const handleTryAgainClick = () => {
     const shuffledPieces = [...data[0].items].sort(() => 0.5 - Math.random());
     setList([{ ...data[0], items: shuffledPieces }, data[1]]);
   };
 
+
   return (
-    <div className="img-puzzle-drag-n-drop">
-      {/* here we iterate through groups*/}
-      {list.map((grp, grpI) => (
-        <div
-          key={grp.title}
-          className="img-puzzle-dnd-group"
-          onDragEnter={
-            dragging && !grp.items.length
-              ? (e) => handleDragEnter(e, { grpI, itemI: 0 })
-              : null
-          }
-        >
-          <div className="img-puzzle-group-title">{grp.title}</div>
-          {/* here we iterate through items*/}
-          {grp.items.map((item, itemI) => (
-            <div
-              draggable
-              onDragStart={(e) => {
-                handleDragStart(e, { grpI, itemI }); //here we are passing the coordinates by index to a specific item
-              }}
-              onDragEnter={
-                dragging ? (e) => handleDragEnter(e, { grpI, itemI }) : null
-              }
-              key={item}
-              className={
-                dragging ? getStyles({ grpI, itemI }) : "img-puzzle-dnd-item"
-              }
-            >
-              {item === "1" && (
-                <img
-                  src={Piece1}
-                  alt="piece 1 of a puzzle"
-                  className="img-puzzle-piece"
-                />
-              )}
-              {item === "2" && (
-                <img
-                  src={Piece2}
-                  alt="piece 2 of a puzzle"
-                  className="img-puzzle-piece"
-                />
-              )}
-              {item === "3" && (
-                <img
-                  src={Piece3}
-                  alt="piece 3 of a puzzle"
-                  className="img-puzzle-piece"
-                />
-              )}
-              {item === "4" && (
-                <img
-                  src={Piece4}
-                  alt="piece 4 of a puzzle"
-                  className="img-puzzle-piece"
-                />
-              )}
-              {item === "5" && (
-                <img
-                  src={Piece5}
-                  alt="piece 5 of a puzzle"
-                  className="img-puzzle-piece"
-                />
-              )}
-            </div>
+
+      <div className="img-puzzle-drag-n-drop">
+
+          {/* here we iterate through groups*/}
+          {list.map((grp, grpI) => (
+
+              <div
+                key={grp.title}
+                className="img-puzzle-dnd-group"
+                onDragEnter={
+                  dragging && !grp.items.length
+                    ? (e) => handleDragEnter(e, { grpI, itemI: 0 })
+                    : null
+                }
+              >
+                  <div className="img-puzzle-group-title">{grp.title}</div>
+
+                    {/* here we iterate through items*/}
+                    {grp.items.map((item, itemI) => (
+
+                      <div
+                        draggable
+                        onDragStart={(e) => {
+                          handleDragStart(e, { grpI, itemI }); //here we are passing the coordinates by index to a specific item
+                        }}
+                        onDragEnter={
+                          dragging ? (e) => handleDragEnter(e, { grpI, itemI }) : null
+                        }
+                        key={item}
+                        className={
+                          dragging ? getStyles({ grpI, itemI }) : "img-puzzle-dnd-item"
+                        }
+                      >
+                          {item === "1" && (
+                            <img
+                              src={Piece1}
+                              alt="piece 1 of a puzzle"
+                              className="img-puzzle-piece"
+                            />
+                          )}
+                          {item === "2" && (
+                            <img
+                              src={Piece2}
+                              alt="piece 2 of a puzzle"
+                              className="img-puzzle-piece"
+                            />
+                          )}
+                          {item === "3" && (
+                            <img
+                              src={Piece3}
+                              alt="piece 3 of a puzzle"
+                              className="img-puzzle-piece"
+                            />
+                          )}
+                          {item === "4" && (
+                            <img
+                              src={Piece4}
+                              alt="piece 4 of a puzzle"
+                              className="img-puzzle-piece"
+                            />
+                          )}
+                          {item === "5" && (
+                            <img
+                              src={Piece5}
+                              alt="piece 5 of a puzzle"
+                              className="img-puzzle-piece"
+                            />
+                          )}
+                      </div>
+                  ))}
+              </div>
           ))}
-        </div>
-      ))}
-      <div className="cactus-img">
-        <img src={Cactus} alt="cactus illustration" className="whole-cactus" />
+
+          <div className="cactus-img">
+             <img src={Cactus} alt="cactus illustration" className="whole-cactus" />
+          </div>
+
+          <div className="puzzle-buttons">
+
+              <button
+                id="puzzle-button"
+                onClick={() => handleTryAgainClick()}
+                className="lg-2 col background-warning"
+              >
+                Try Again
+              </button>
+                            
+              <PuzzleHint className="puzzle-hint" id="puzzle-hint" />
+
+              <button
+                id="puzzle-button"
+                onClick={() => handleIsSolvedClick()} 
+                className="lg-2 col background-warning"
+              >
+                Done
+              </button>
+              
+              {/* This triggers the popup,
+              you can check by using <Solved trigger={true}/>
+              Need variable to trigger it to true */}
+              <Solved trigger={buttonSolvedPopup} setTrigger={setButtonSolvedPopup} /> 
+
+              <TryAgain trigger={buttonRetryPopup} setTrigger={setButtonRetryPopup} />
+
+          </div>
+
       </div>
-      <div className="puzzle-buttons">
-        <button
-          id="puzzle-button"
-          onClick={() => handleTryAgainClick()}
-          className="lg-2 col background-warning"
-        >
-          Try Again
-        </button>
-        <button
-          id="puzzle-button"
-          onClick={() => handleIsSolvedClick()}
-          className="lg-2 col background-warning"
-        >
-          Done
-        </button>
-      </div>
-    </div>
+    
   );
+
 }
 
 export default DragNDrop1;

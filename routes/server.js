@@ -24,8 +24,21 @@ router.get("/server", async (req, res) => {
 router.post("/server", async (req, res) => {
   let {game_name, game_lvl, game_images, completed, game_score} = req.body;
   let sql = `
-        INSERT INTO games (game_name, game_lvl, game_images, completed, game_score) 
-        VALUES ('${game_name}', ${game_lvl},'${game_images}',${completed}, ${game_score})
+        INSERT INTO 
+        games (
+          game_name, 
+          game_lvl, 
+          game_images, 
+          completed, 
+          game_score
+          ) 
+        VALUES (
+          '${game_name}', 
+          ${game_lvl},
+          '${game_images}',
+          ${completed}, 
+          ${game_score}
+          )
     `;
   try {
 
@@ -55,7 +68,6 @@ router.delete("/server/:image_id", async (req, res) => {
       res.status(404).send({ error: "Not Found" });
     }
   } catch (err) {
-    y;
     res.status(500).send({ error: err.message });
   }
 });

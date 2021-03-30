@@ -1,0 +1,31 @@
+.MainCategoriesView {
+    width:100%;
+    height: 100%;
+}
+
+.categories-header-container{
+    width: 100%;
+    margin-top: 20%;
+    /*used to check container*/
+     /* background: black;  */
+}
+
+
+.categories-hint-container-main{
+    background: rgb(248, 200, 136);
+    margin-top: 20%;
+    width: 15rem;
+    margin-left:50%;
+    box-shadow: 3px 3px 3px rgb(241, 127, 127);
+}
+
+.toy-train{
+    border: none;
+
+}
+
+.goose {
+    border: none;
+    margin-left: 120%;
+    margin-top: -25%;
+}

@@ -10,6 +10,9 @@ import Bicycle from "../CatImg/bicycle.jpg";
 import Redbike from "../CatImg/redbike.png";
 import Bike from "../CatImg/bike.png";
 import "./Categories2.css";
+import Solved from './dropCards/Solved'
+import TryAgain from './dropCards/TryAgain'
+import CategoriesHint from '../CategoriesHint'
 
 const saveScore = (gameScore) => {
   let options = {
@@ -17,7 +20,7 @@ const saveScore = (gameScore) => {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(gameScore),
   };
-  fetch("http://localhost:3000/server", options)
+  fetch("/server", options)
     .then((response) => response.json())
     .then((responseJson) => {
       console.log("score saved");
@@ -32,6 +35,11 @@ function Categories({ categoriesData }) {
   const [dragging, setDragging] = useState(false);
   const dragItem = useRef();
   const dragNode = useRef();
+
+  //initial state for popup button
+  const [buttonSolvedPopup, setButtonSolvedPopup] = useState(false);
+  //initial state for popup button
+  const [buttonRetryPopup, setButtonRetryPopup] = useState(false);
 
   const handleDragStart = (e, params) => {
     console.log("drag starting...", params);
@@ -96,11 +104,12 @@ function Categories({ categoriesData }) {
     const rigthPiecesOrder = list[0].items;
     for (let i = 0; i < rigthPiecesOrder.length; i++) {
       if (rigthPiecesOrder.includes("6") && rigthPiecesOrder.includes("9")) {
-        console.log("You did it!");
-        return true;
+      // triggers the popup for solved
+        return [true, setButtonSolvedPopup(true)]
       } else {
-        console.log("Oops! Try again!");
-        return false;
+        console.log("Try again");
+        // triggers the popup for try again
+        return [true, setButtonRetryPopup(true)]
       }
     }
   };
@@ -113,7 +122,7 @@ function Categories({ categoriesData }) {
         game_lvl: 1,
         game_images: null,
         completed: 1,
-        game_score: 0,
+        game_score:1
       });
     }
   };
@@ -208,6 +217,9 @@ function Categories({ categoriesData }) {
         >
           Try Again
         </button>
+
+        <CategoriesHint className="categories-hint" id="categories-hint" />
+
         <button
           id="categories"
           onClick={() => handleIsSolvedClick()}
@@ -215,6 +227,14 @@ function Categories({ categoriesData }) {
         >
           Done
         </button>
+              {/* This triggers the popup,
+              you can check by using <Solved trigger={true}/>
+              Need variable to trigger it to true */}
+              <Solved trigger={buttonSolvedPopup} setTrigger={setButtonSolvedPopup} /> 
+
+              <TryAgain trigger={buttonRetryPopup} setTrigger={setButtonRetryPopup} />
+
+
       </div>
     </div>
   );
