@@ -1,32 +1,38 @@
 import "../AddPlayer/AddPlayer.css";
-import UseLocalStorage from "../UseLocalStorage/UseLocalStorage.js";
+import React, { useState, useEffect } from "react";
 
 function AddPlayer(props) {
-  const [playerName, setPlayerName] = UseLocalStorage("");
-  const [playerAge, setPlayerAge] = UseLocalStorage(0);
+  const [playerName, setPlayerName] = useState(
+    localStorage.getItem("Name") || ""
+  );
+  // const [playerAge, setPlayerAge] = useState(0);
 
   const savePlayer = () => {
     const newPlayer = {
       name: playerName,
-      age: playerAge,
+      // age: playerAge,
     };
   };
 
+  useEffect(() => {
+    console.log(localStorage.getItem("valueInPlayerName"));
+    localStorage.setItem("Name", playerName);
+  }, [playerName]);
+
   const handleInputChange = (event) => {
-    let { name, value } = event.target;
-    if (name === "playerName") {
-      setPlayerName(value);
-    }
-    if (name === "playerAge") {
-      setPlayerAge(value);
-    }
+    setPlayerName(event.target.value);
+
+    // if (localStorage.setItem("playerAge", event.target.value)) {
+    //   setPlayerAge(event.target.value);
+    // }
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setPlayerName("");
-    setPlayerAge("");
+
     savePlayer();
+    setPlayerName("");
+    // setPlayerAge("");
   };
 
   return (
@@ -45,8 +51,9 @@ function AddPlayer(props) {
                   required
                 />
               </label>
+              <p>{playerName}</p>
             </div>
-            <div className="player-age">
+            {/* <div className="player-age">
               <label>
                 Age
                 <input
@@ -57,16 +64,8 @@ function AddPlayer(props) {
                   required
                 />
               </label>
-            </div>
-
-            <div className="form-buttons">
-              <button type="submit" class="btn btn-secondary">
-                Add
-              </button>
-              <button type="button" class="btn btn-secondary">
-                Cancel
-              </button>
-            </div>
+              <p>{playerAge}</p>
+            </div> */}
           </form>
         </div>
       </div>
