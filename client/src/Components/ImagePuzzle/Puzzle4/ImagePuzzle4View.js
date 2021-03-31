@@ -21,6 +21,7 @@ function ImagePuzzle4View() {
         <div className="ImagePuzzle4View">
 
             <header className="ImagePuzzleView1-header">
+               Puzzle Level 4
               <DragNDrop4 data={data} />
             </header>
 

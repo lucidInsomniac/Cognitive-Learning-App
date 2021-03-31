@@ -21,6 +21,7 @@ function Categories1View() {
       <div className="Categories1View">
 
           <header className="Categories1View-header">
+            <h1 className="categories1-header">Categories Level 1</h1>
             <Categories1DnD categoriesData={categoriesData} />
           </header>
 
