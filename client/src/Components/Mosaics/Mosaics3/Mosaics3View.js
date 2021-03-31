@@ -1,4 +1,7 @@
 import React from 'react'
+import MosaicsUnderConstruction from '../MosaicsUnderConstruction'
+import '../MosaicsView.css'
+
 
 
 export default function Mosaics3View () {
@@ -6,7 +9,10 @@ export default function Mosaics3View () {
     return (
 
         <div className="Mosaics3View">
-             <header>This is for Mosaics 3</header>
+            <h1 className="mosaics2-header">Mosaics Level 3</h1>
+
+            <MosaicsUnderConstruction />
+
         </div>
     )
     

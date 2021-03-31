@@ -1,0 +1,37 @@
+.MainMosaicsView {
+    width:100%;
+    height: 100%;
+    text-align: center;
+    /*to check size*/
+    /* background: red; */
+    
+}
+
+.mosaics-header-container {
+    width: 100%;
+    margin-top: 23%;
+    /*used to check container*/
+     /* background: black;  */
+
+}
+
+.mosaics-h1 {
+    text-shadow: 0 5px 8px #e27878, 5px 5px 10px #050575;
+    margin-bottom: 10%;
+}
+
+
+.ufos {
+    border: none;
+    margin-top: 10%;
+    margin-left: 27%;
+
+}
+
+.mosaics-hint-container-main{
+    background: rgb(248, 200, 136);
+    margin-top: 20%;
+    width: 15rem;
+    margin-left:50%;
+    box-shadow: 3px 3px 3px rgb(241, 127, 127);
+}

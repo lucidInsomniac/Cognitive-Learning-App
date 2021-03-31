@@ -1,13 +1,17 @@
 import React from 'react'
+import PuzzleUnderConstruction from '../PuzzleUnderConstruction'
+import '../ImagePuzzleView.css'
 
 export default function ImagePuzzle1View () {
 
     return (
 
         <div className="ImagePuzzle1View">
-            <header>This is for Puzzle 1</header>
-        </div>
+            <h1 className="puzz1-header">Puzzle Level 1</h1>
+
+            <PuzzleUnderConstruction />
         
+        </div>
     ) 
 
 }
