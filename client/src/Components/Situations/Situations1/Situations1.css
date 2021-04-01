@@ -134,7 +134,7 @@ button#pizza {
   padding-bottom: 15%;
 }
 
-div#situations-hint {
+div.situations1-hint {
   display: flex;
   margin-bottom: 60%;
   margin-top: 45%;

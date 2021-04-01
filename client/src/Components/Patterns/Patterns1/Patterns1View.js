@@ -1,14 +1,18 @@
 import React from 'react'
-import './Patterns1.css'
+import PatternsUnderConstruction from '../PatternsUnderConstruction'
+import '../PatternsView.css'
 
-export default function Patterns1View () {
+export default function Patterns1View() {
 
     return (
-
-        <div className="Patterns1View">
-            <header>This is for Patterns 1</header>
-        </div>
         
+        <div className="Patterns1View">
+            <h1 className="patterns1-header">Patterns Level 1</h1>
+
+            <PatternsUnderConstruction />
+            
+        </div>
+
     )
 
 }

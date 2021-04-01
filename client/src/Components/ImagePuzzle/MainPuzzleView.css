@@ -6,8 +6,8 @@
 
 .puzz-header-container{
     width: 100%;
-    margin-top: -20%;
-    margin-bottom: 40%;
+    margin-top: -2%;
+    margin-bottom: 35%;
     /*used to check container*/
      /* background: black;  */
 }
@@ -21,11 +21,16 @@
     box-shadow: 3px 3px 3px rgb(241, 127, 127);
 }
 
+div.puzzle-hint-containter-main{
+    margin-top: -10%;
+}
+
 .little-girl {
     margin-left: 135%;
     margin-top: -35%;
     height: 20vh;
     border:none;
+    margin-top: 8%;
 }
 
 .smiley-girl {

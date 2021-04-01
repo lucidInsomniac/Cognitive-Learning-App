@@ -1,12 +1,16 @@
 import React from 'react'
-import './Situations2.css'
+import SituationsUnderConstruction from '../SituationsUnderConstruction'
+import '../SituationsView.css'
 
 export default function Situations2View () {
 
     return (
         
         <div className="Situations2View">
-            <header>This is for Situations 2</header>
+            <h1 className="situations2-header">Situations Level 2</h1>
+
+            <SituationsUnderConstruction />
+            
         </div>
 
     )

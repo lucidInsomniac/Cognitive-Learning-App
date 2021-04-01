@@ -132,7 +132,7 @@ button#puzzle-button {
 
 }
 
-div#puzzle-hint {
+div.puzz4-hint {
   display: flex;
   text-align: center;
   margin-bottom: 60%;
