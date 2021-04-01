@@ -1,13 +1,18 @@
 import React from 'react'
+import CategoriesUnderConstruction  from '../CategoriesUnderConstruction'
+import '../CategoriesView.css'
 
-export default function Categories4View () {
+export default function Categories4View() {
 
     return (
-
+        
         <div className="Categories4View">
-            <header>This is for Categories 4</header>
+            <h1 className="categories3-header">Categories Level 4</h1>
+
+            <CategoriesUnderConstruction />
+            
         </div>
 
-    ) 
-    
+    )
+
 }

@@ -1,0 +1,26 @@
+.MainPatternsView {
+    width:100%;
+    height: 100%;
+}
+
+.patterns-header-container {
+    width: 100%;
+    margin-top: 10%;
+    margin-bottom: 3%;
+    /*used to check container*/
+     /* background: black;  */
+}
+
+.patterns-main-under {
+    height: 70%;
+
+}
+
+.modal-container-patterns {
+
+    background: rgb(248, 200, 136);
+    margin-top: -3%;
+    width: 15rem;
+    margin-left:50%;
+    box-shadow: 3px 3px 3px rgb(241, 127, 127);
+}
