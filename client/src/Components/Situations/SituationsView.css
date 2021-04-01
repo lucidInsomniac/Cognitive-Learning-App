@@ -1,0 +1,30 @@
+.Situations2View, .Situations3View, .Situations4View {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.situations2-header, .situations3-header, .situations4-header {
+    margin-top: 7%;
+    margin-bottom: 2%;
+    text-shadow: 0 0 5px #93aee0, 0 0 10px #4242d1;
+
+}
+
+
+.situations-404 {
+    width: 50%;
+    text-align: center;
+    margin-left: 28%;
+    text-shadow: 0 0 5px #93aee0, 0 0 10px #4242d1;
+}
+
+.sleeping-dino {
+    margin-top: 5%;
+    border: none;
+    margin-left: 32%;
+    height: 50vh;
+
+}
+
+

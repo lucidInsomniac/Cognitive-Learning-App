@@ -33,13 +33,16 @@
 }
 
 .situations-group-title {
-  margin-bottom: 0.5rem;
-}
-
+  
+    margin-bottom: 0.5rem;
+  }
+  
 .situations-dnd-item {
+    
   display: grid;
   align-items: center;
   min-height: 150px;
+  background-color: #efefef;
   color: #282c34;
   border-radius: 5px;
   font-weight: bold;
@@ -47,29 +50,32 @@
   /*to see where location is*/
   /* background: rgb(252, 14, 14);  */
 }
-
+  
 .situations-dnd-item:not(:last-of-type) {
   margin-bottom: 0.5rem;
 }
-
+  
 .situations-dnd-item * {
   margin: 0;
 }
-
+  
 p {
   align-self: center;
 }
-
+  
+  
 .category-card {
+    
   display: grid;
   gap: 0.5rem;
   /* width: 100%;
-    height: 100%; */
+  height: 100%; */
   grid-template-columns: repeat(auto-fill, 300px);
   border-radius: 5px;
 }
-
+  
 .category-card {
+    
   width: 150px;
   height: 150px;
 }
@@ -128,8 +134,12 @@ button#pizza {
   padding-bottom: 15%;
 }
 
-div#situations-hint {
+div.situations1-hint {
   display: flex;
   margin-bottom: 60%;
-  margin-top: -25%;
+  margin-top: 45%;
+  /* background:black; */
+  margin-left: -30%;
+  margin-right: 20%;
 }
+

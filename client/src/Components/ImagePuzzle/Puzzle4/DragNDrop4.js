@@ -225,7 +225,9 @@ function DragNDrop1({ data }) {
                 Try Again
               </button>
                             
-              <PuzzleHint className="puzzle-hint" id="puzzle-hint" />
+              <div className="puzz4-hint">
+              <PuzzleHint className="puzzle4-hint" id="puzzle-hint" />
+              </div>
 
               <button
                 id="puzzle-button"

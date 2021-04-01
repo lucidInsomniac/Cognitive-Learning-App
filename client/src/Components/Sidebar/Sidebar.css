@@ -51,18 +51,23 @@
 
 /*This is a psuedo element on sidebar that we are targeting
 to get rid of any ugly default scrollbars*/
-.navbar::-webkit-scrollbar {
+/* .navbar::-webkit-scrollbar {
   width: 0.5rem;
-}
+} */
 
 /*psuedo element to change sidebar tracking*/
-.navbar::-webkit-scrollbar-track {
+/* .navbar::-webkit-scrollbar-track {
   background: #e2d4e7;
-}
+} */
 
 /*pseudo element for sidebar for thumb track on scroll bar*/
-.navbar::-webkit-slider-thumb {
+/* .navbar::-webkit-slider-thumb {
   background: #c8c4d4;
+} */
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; 
 }
 
 .hippo {

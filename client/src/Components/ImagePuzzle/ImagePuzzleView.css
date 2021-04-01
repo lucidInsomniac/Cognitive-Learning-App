@@ -1,0 +1,34 @@
+.ImagePuzzle1View, .ImagePuzzle2View, .ImagePuzzle3View {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.puzz1-header, .puzz2-header, .puzz3-header {
+    margin-top: 10%;
+    margin-bottom: 8%;
+
+}
+
+
+.puzzle-404 {
+    width: 50%;
+    text-align: center;
+    margin-left: 28%;
+    text-shadow: 0 0 5px #e27878, 0 0 10px #1515a1;
+}
+
+.floating-robot {
+    border: none;
+    height: 80%;
+    margin-left: 70%;
+    margin-top: -45%;
+}
+
+.confused-rabbit {
+    border: none;
+    margin-left: 8%;
+    margin-top: -35%;
+    height: 80%
+}
+

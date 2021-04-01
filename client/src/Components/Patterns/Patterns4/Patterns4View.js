@@ -1,12 +1,16 @@
 import React from 'react'
-import './Patterns4.css'
+import PatternsUnderConstruction from '../PatternsUnderConstruction'
+import '../PatternsView.css'
 
-export default function Patterns4View () {
+export default function Patterns4View() {
 
     return (
         
         <div className="Patterns4View">
-            <header>This is for Patterns 4</header>
+            <h1 className="patterns4-header">Patterns Level 4</h1>
+
+            <PatternsUnderConstruction />
+            
         </div>
 
     )
