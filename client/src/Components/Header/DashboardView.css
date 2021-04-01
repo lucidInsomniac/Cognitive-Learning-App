@@ -56,3 +56,11 @@ table {
 .total-score-container {
   text-shadow: 4px 4px 4px lightslategray;
 }
+
+.location-box {
+  margin-left:-55%;
+}
+
+.weather-box {
+  margin-left:-55%;
+}
