@@ -1,0 +1,29 @@
+.Patterns1View, .Patterns2View, .Patterns3View, .Patterns4View {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.patterns1-header, .patterns2-header, .patterns3-header, .patterns4-header {
+    margin-top: 7%;
+    margin-bottom: 2%;
+    text-shadow: 0 0 5px #e0d493, 0 0 10px #4242d1;
+
+}
+
+
+.patterns-404 {
+    width: 50%;
+    text-align: center;
+    margin-left: 28%;
+    text-shadow: 0 0 5px #e0d493, 0 0 10px #4242d1;
+}
+
+.children-parade {
+    margin-top: 3%;
+    border: none;
+    margin-left: 39%;
+    height: 50vh;
+
+}
+

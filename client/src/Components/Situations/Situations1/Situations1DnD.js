@@ -304,7 +304,9 @@ export default function Situations1DnD({ situationsData }) {
                   Try Again
                 </button>
 
-                <SituationsHint className="situations-hint" id="situations-hint" />
+                <div className="situations1-hint">
+                  <SituationsHint className="situations-hint" id="situations-hint" />
+                </div>
 
                 <button
                   id="pizza"

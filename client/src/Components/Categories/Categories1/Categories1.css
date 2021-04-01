@@ -4,6 +4,14 @@
   height: 100%;
 }
 
+.categories1-header {
+  text-align: center;
+  /* background: green; */
+  width: 100%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
 .categories-drag-n-drop {
   /*to check location of cointainer*/
   /* background: black; */
@@ -21,7 +29,7 @@
 
 /*this moves the container for the cards*/
 .categories-dnd-group {
-  background-color: #757575;
+  background-color: #a1b8f8;
   border-radius: 5px;
   padding: 0.5rem;
   width: 100%;
@@ -37,7 +45,7 @@
   display: grid;
   align-items: center;
   min-height: 150px;
-  background-color: #efefef;
+  background-color: #a1b8f8;
   color: #282c34;
   border-radius: 5px;
   font-weight: bold;
@@ -82,12 +90,12 @@ p {
   flex-direction: column;
   margin-right: 0%;
   margin-left: 395%;
-  margin-top: -200%;
-  margin-bottom: 90%;
+  /* margin-top: -200%;
+  margin-bottom: 90%; */
   /* display: grid;
   grid-template-columns: repeat(2, 1fr); */
   width: 50%;
-  gap: 20px;
+
   /* padding-left: 150px; */
 }
 
@@ -99,14 +107,20 @@ button#categories{
   padding-left: 45%;
   padding-right: 65%;
   margin-left: -35%;
+  margin-top: -70%;
+  margin-bottom: -80%;
   padding-top: 15%;
   padding-bottom: 15%;
+  
  
 }
 
 
- div#categories-hint {
-  display: flex;
-  margin-bottom: 60%;
-  margin-top: -25%;
+
+.cat1-hint {
+  /* background: black; */
+  margin-top: 120%;
+  margin-bottom: 10%;
+  margin-left: -40%;
+  margin-right: 10%;
 }
