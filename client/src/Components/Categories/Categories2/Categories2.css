@@ -4,6 +4,14 @@
   height: 100%;
 }
 
+.categories2-header {
+  text-align: center;
+  /* background: green; */
+  width: 100%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
 .categories-drag-n-drop {
   /*to check location of cointainer*/
   /* background: black; */
@@ -102,4 +110,12 @@ div#categories-hint {
   display: flex;
   margin-bottom: 60%;
   margin-top: -25%;
+}
+
+.categories2-hint {
+  /* background: black; */
+  margin-top: 120%;
+  margin-bottom: 10%;
+  margin-left: -40%;
+  margin-right: 10%;
 }
