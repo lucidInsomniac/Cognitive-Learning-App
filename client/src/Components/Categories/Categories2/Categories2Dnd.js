@@ -218,7 +218,9 @@ function Categories({ categoriesData }) {
           Try Again
         </button>
 
-        <CategoriesHint className="categories-hint" id="categories-hint" />
+        <div className="categories2-hint">
+        <CategoriesHint className="categories2-hint" id="categories2-hint" />
+        </div>
 
         <button
           id="categories"

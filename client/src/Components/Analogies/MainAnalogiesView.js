@@ -12,7 +12,7 @@ export default function MainPuzzleView () {
         <div className="MainAnalogiesView">
 
             <div className="analogies-header-container">
-                <h1>This is the Main Puzzle Page</h1> 
+                <h1>This is the Main Analogies Page</h1> 
             </div>
 
             <div className="analogies-hint-containter-main">
