@@ -1,14 +1,18 @@
 import React from 'react'
-import './Analogies4View.css' 
+import AnalogiesUnderConstruction from '../AnalogiesUnderConstruction'
+import '../AnalogiesView.css'
 
 export default function Analogies4View() {
 
     return (
-
-        <div className="Analogies4View">
-            <header>This is for Analogies 4</header>
-        </div>
         
+        <div className="Analogies4View">
+            <h1 className="analogies4-header">Analogies Level 4</h1>
+
+            <AnalogiesUnderConstruction />
+            
+        </div>
+
     )
 
 }

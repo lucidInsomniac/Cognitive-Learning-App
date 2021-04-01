@@ -13,7 +13,7 @@ export default function MainSituationsView () {
                 <h1>This is the Main Situations Page</h1> 
             </div>
 
-            <div className="situations-hint-container-main">
+            <div className="situations-hint-container-main"> 
                 <SituationsHint className="main-situations-hint" />
             </div>
 

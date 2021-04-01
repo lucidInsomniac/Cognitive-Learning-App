@@ -1,0 +1,34 @@
+.Analogies1View, .Analogies2View, .Analogies3View, .Analogies4View {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  
+    
+}
+
+.analogies1-header, .analogies2-header, .analogies3-header, .analogies4-header {
+    margin-top: 7%;
+    margin-bottom: 2%;
+    text-shadow: 0 0 5px #e0d493, 0 0 10px #4242d1;
+    
+}
+
+
+.analogies-404 {
+    width: 50%;
+    text-align: center;
+    margin-left: 28%;
+    text-shadow: 0 0 5px #e0d493, 0 0 10px #4242d1;
+    
+}
+
+.kitties {
+    margin-top: 3%;
+    border: none;
+    margin-left: 39%;
+    height: 80vh;
+    margin-left: 12%;
+    margin-top: -3%;
+    box-shadow: 5px 5px 5px grey;
+}
+
