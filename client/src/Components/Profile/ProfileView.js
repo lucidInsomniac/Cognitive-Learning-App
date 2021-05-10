@@ -24,6 +24,9 @@ export default function ProfileView () {
         localStorage.setItem("Name", playerName);
       }, [playerName]);
 
+
+
+      
     //put useEffect to pull data for player here
     useEffect(() => {
         //this connects to the server.js routes
@@ -56,6 +59,8 @@ export default function ProfileView () {
 
    //check to see if each game_score was extracted
    console.log("gameScore", gameScore)
+
+
 
 
    //create a totalScore function with extracted game_score
