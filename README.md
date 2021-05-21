@@ -3,7 +3,7 @@
 
 This Cognitive Learning App aims to use simple drag-n-drop, as well as on-click triggered games, to help parents, educators, researchers, and developers understand how non-verbal individuals engage, learn and grow.
 
-Although this is a Minimal Viable Product, and not a full functioning app, our aim is to find new ways in how we can assist their journey by improving their comprehensive,  thinking, and social skills, free of racial, accessibility, social-economical, regional, and identity status.
+Although this is a Minimal Viable Product, and not a full functioning app, our aim is to find new ways in how we can assist their journey by improving their comprehensive,  thinking, and social skills that are free from any racial, accessibility, social-economical, regional, and identity status.
 
 Activities are based on interviews with educators who specialize in teaching children with special needs, parents, and therapists, as well as the Snijders-Oomen Nonverbal Intelligence Test, also known as the SON-R 2 1/2-7 from the Netherlands, and from the US, commonly used methods such as P.E.R.M.A (Positive Emotion, Engagement, Relationships, Meaning, and Accomplishments), and research from the Child Mind Institute of NYC.
 
