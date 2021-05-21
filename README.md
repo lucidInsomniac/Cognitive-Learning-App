@@ -33,8 +33,6 @@ First things, first, please read through the Code of Conduct Page. If you agree 
 
 ### CONTRIBUTOR
 
-### Type of Contributors
-
 ### Technical
 
     - Developers
@@ -57,11 +55,65 @@ First things, first, please read through the Code of Conduct Page. If you agree 
 
 - How to Get Set-Up
 
-- Database SetUp
+  This section explains what features are included in this app, this is not a complete app, and focuses on the activities we were able to complete.
+
+### Package Managers
+
+Npm/Yarn
+
+    - In the project folder called "CogLearnOpen", this is the server section:
+
+        npm install or yarn install
+
+    - Then go inside the project folder, and locate the "client" directory:
+
+        cd Cognitive-Learning-App
+
+    - Install npm or yarn here too
+
+        npm install or yarn install
+
+[MySQL](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/)
+
+    - Need to create database called "puzzles"
+
+    - Add a table called "image_puzzle"
+        All steps to add data are included in "model" folder > DBSetup.txt
+        
+    - Create ".env"file on server side before npm start on server. Check that file is added in ".gitignore" for server.
+        Instructions on what to include is in the same file for "puzzles" table setup.
+
+### Features
+
+
+
+### MySQL Database Schema
 
 ![DBSchema](model/gamesTable.png)
-  
-- Setting Up  
+
+### Technologies
+
+1. Frontend
+
+    - React JS
+
+
+2. Backend
+
+    - MYSQL DB
+
+    - Express JS
+
+    - Node JS
+
+3. Error, Roadmap, Boards, Project Pages, Bug Tracking
+
+    - Jira
+
+4. Testing Libraries
+
+    - Jest: For backend and Front end code testing
+    - Cypress: User end to end testing
 
 - Now what? Look at Project Boards  
 
