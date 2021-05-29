@@ -1,0 +1,32 @@
+For .env file, you need the file to have this inside:
+
+DB_HOST=localhost
+DB_USER=root
+DB_PASS= YOUR PW
+
+DB_NAME=puzzles
+
+
+=====================================================
+
+Creating MYSQL Script files:
+
+-- How to export DB file:
+-- mysql -u root -p [dbname] > [path to filename.sql]
+
+-- How to import DB file 
+-- mysql -u root -p [dbname] < [path to filename.sql]
+
+-- How to create sql file:
+-- Video ref: https://youtu.be/Tw0FMyNM_88
+
+--DB Schema lookup flowchart shapes: https://www.rff.com/flowchart_shapes.php
+
+
+=====================================================
+
+change to desired DB with:
+
+======================================================
+
+use puzzles;

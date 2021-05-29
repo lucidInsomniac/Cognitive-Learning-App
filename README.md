@@ -7,19 +7,17 @@ Although this is a Minimal Viable Product, and not a full functioning app, our a
 
 Activities are based on interviews with educators who specialize in teaching children with special needs, parents, and therapists, as well as the Snijders-Oomen Nonverbal Intelligence Test, also known as the SON-R 2 1/2-7 from the Netherlands, and from the US, commonly used methods such as P.E.R.M.A (Positive Emotion, Engagement, Relationships, Meaning, and Accomplishments), and research from the Child Mind Institute of NYC.
 
-## Motivation for project
-
-The amount of free apps available that cater to special needs people are very limited, especially those targeted for children of low-income backgrounds.
-
-
 ## Why should we care about this project?
 
+The amount of free apps available that cater to special needs people are very limited, especially those targeted for children of low-income backgrounds. Many of these parents do not have access to educational services, or healthcare to help them give a better life for their child, or loved one by bringing out the most of their potential abilities. And in the end, they are the ones left behind, or become invisible.
+
+We want to help break down the stigma and barriers surrounding people learning disabilities, and by understanding how people absorb knowledge, we can help give them a brighter future. 
 
 ## How do I get started?
 
 First things, first, please read through the Code of Conduct Page. If you agree to these terms, you may proceed on.
 
-## Select how you would like to participate: 
+## Select how you would like to participate
 
 ### USER ( You can take part in more than one role)  
 
@@ -77,15 +75,41 @@ Npm/Yarn
 
     - Need to create database called "puzzles"
 
-    - Add a table called "image_puzzle"
+    - Add a table called "games"
         All steps to add data are included in "model" folder > DBSetup.txt
         
-    - Create ".env"file on server side before npm start on server. Check that file is added in ".gitignore" for server.
+    - Create ".env"file on server side before npm start/yarn on server. Check that file is added in ".gitignore" for server.
         Instructions on what to include is in the same file for "puzzles" table setup.
 
 ### Features
 
+- Login for Player, simply type name
 
+- Player profile is automatically saved in localStorage of the browser
+
+- Puzzle activities are Drag-N-Drop and On-Click actions
+
+- External Weather API automatically displays weather based on user's location with a component that applies useEffect with geolocation
+
+- Player activity tracker in Profile section, tracks all points gained from completed games
+
+- Sidebar Menu for easy access to all content
+
+### Future Features
+
+- Therapeutic games triggered after a set of consecutive number of games completed.
+
+- Incorporate Social Interactive games with others
+
+- Self-awarness games similar to ones used in classrooms to help build confidence, or calm down after having panic attacks
+
+- Survival Skill activities: chore related, shopping, public transportation, using money or credit cards, how to write a letter/email, use a phone, etc.
+
+- For activity tracker, we should add 0 points for incompleted games to assess player's progress
+
+- Badge collection for completing a set of activitites
+
+- Create alternative games of same difficulty. Do not want reptitive games if they have already completed it once. This can cause false results if they learn to memorize the content.
 
 ### MySQL Database Schema
 
@@ -96,6 +120,10 @@ Npm/Yarn
 1. Frontend
 
     - React JS
+
+    - Paper CSS
+
+    - CSS3
 
 
 2. Backend
@@ -110,12 +138,18 @@ Npm/Yarn
 
     - Jira
 
+    - GitHub
+
+<S>
 4. Testing Libraries
 
     - Jest: For backend and Front end code testing
     - Cypress: User end to end testing
+</S>
 
-- Now what? Look at Project Boards  
+- Now what? 
+
+Look at Project Boards  
 
 - Current app status  
 
